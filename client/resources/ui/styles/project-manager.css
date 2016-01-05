@@ -1,0 +1,48 @@
+#page-topbar {
+	width: 100%;
+	display: inline-block;
+}
+
+#top-bar {
+	display: inline-block;
+	width: calc(100% - 400px);
+}
+
+#tool-box {
+	margin-right: 100px;
+	float:right;
+}
+
+
+#search-bar {
+	display: inline-block;
+	width: 60%;
+}
+
+#file-structure {
+	position: fixed;
+	bottom: 0;
+	top:150px;
+	z-index: -1;
+	padding: 5px;
+	box-shadow: 0px 0px 3px #666;
+	width: 200px;
+	background-color: white;
+}
+
+#file-history {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	top:150px;
+	z-index: -1;
+	padding: 5px;
+	box-shadow: 0px 0px 3px #666;
+	width: 200px;
+	background-color: white;
+}
+
+
+#file-content {
+	margin-left: 250px;
+}

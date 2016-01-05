@@ -5,6 +5,7 @@ header {
 	width: 100%;
 	background-color: white;
 	box-shadow: 0px 0px 3px #4da6ff;
+	z-index: 100;
 }
 
 body {
@@ -29,6 +30,11 @@ footer {
 	font-family: Calibri;
 	margin-left: 10px;
 	cursor: pointer;
+	display: inline-block;
+}
+
+#top-bar {
+	display: inline-block;
 }
 
 #copyright-contact {
