@@ -44,6 +44,43 @@
 	vertical-align: middle;
 }
 
+.inline {
+	display: inline-block;
+}
+
+#tool-box {
+	/* TODO: Same alignement with path bar */
+	width: 303px;
+	margin-right: 260px;
+	display: inline-block;
+	float:right;
+}
+/* Last item > no border right */
+#tool-box-delete {
+	border: none;
+}
+
+.tool-box-item {
+	border-right:1px solid #eee;
+	text-align: right;
+	font-size: 0.8em;
+	cursor: pointer;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-radius: 1px;
+	margin: 0;
+}
+
+.tool-box-item:hover {
+	background-color: #eee;
+}
+
+.tool-box-image {
+	width: 30px;
+	height: 30px;
+	vertical-align:middle;
+}
+
 /*					GUILLAUME					*/
 
 #path {
@@ -302,11 +339,6 @@
 #top-bar {
 	display: inline-block;
 	width: calc(100% - 400px);
-}
-
-#tool-box {
-	margin-right: 100px;
-	float:right;
 }
 
 #search-bar {
