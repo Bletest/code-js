@@ -1,57 +1,11 @@
-﻿/*					FILTERS						*/
-
-#file-filters {
-	width: 100%;
-	height: 25px;
-	margin-top: -15px;	/* Temporaire */
-	/* margin-left: -30px; */
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 0px;
-	padding-bottom: 10px;
-	border: 1px solid #a3a3a3;
-	vertical-align: middle;
-	line-height: 35px;
-	background-color: #e2e2e2;
-	font-size: 15px;
-	cursor: pointer;
-}
-
-#file-filters-name {
-	margin-left: 73px;
-	float: left;
-}
-
-.filtersTitle {
-	border: none;
-	border-bottom: 1px solid #4da6ff;
-	border-radius: 1px;
-	box-shadow: 0 2px 2px -2px #4da6ff;
-}
-
-#file-filters-date {
-	margin-left: 440px;
-	float: left;
-}
-
-#file-filters-workers {
-	margin-left: 130px;
-	float: left;
-}
-
-#file-filters-name img,
-#file-filters-date img,
-#file-filters-workers img {
-	width: 25px;
-	vertical-align: middle;
-}
-
-/*					GUILLAUME					*/
+﻿/*					GUILLAUME					*/
 
 #path {
-	width: 60%;
-	margin-top: 10px;
-	margin-left: 50px;
+	overflow: hidden;
+	max-width:40%;
+	max-height: 30px;
+	margin-left: 45px;
+	float: left;
 }
 
 .path-project {
@@ -61,9 +15,9 @@
     height: 28px;
     line-height: 28px;
     vertical-align: top;
-	padding-top: 1px;
+
     padding-right: 6px;
-    padding-bottom: 1px;
+
     padding-left: 6px;
 }
 .path-project:hover {
@@ -93,6 +47,7 @@
 	display: inline-block;
     height: 28px;
 }
+
 .history-project-name {
     display: block;
 	font-weight: bold;
@@ -100,23 +55,17 @@
 	height: 32px;
 	line-height: 32px;
     vertical-align: top;
-	border-radius: 2px;
-	margin-bottom: 1px;
-	padding: 2px;
-	text-align: center;
+	box-shadow: 0px 0px 3px #4da6ff;
+	margin-bottom: 20px;
 }
 
 .history-modif {
 	display: block;
+	box-shadow: 0px 0px 3px #4da6ff;
 	padding-top: 2px;
-    padding-right: 4px;
-    padding-bottom: 8px;
-    padding-left: 4px;
-	border: 1px solid #a6a6a6;
-	border-radius: 2px;
-	box-shadow: 2px 1px 2px #eee;
-	background-color: #fafafa;
-	margin-bottom: 10px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
 }
 
 .history-modif-modifier {
@@ -128,8 +77,7 @@
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	border-radius: 1px;
-	vertical-align: middle;
+	border-radius: 5px;
 }
 
 .history-modif-modifier-name {
@@ -139,18 +87,14 @@
 }
 
 .history-modif-modification {
-	margin-left: 45px;
-}
-
-.history-modif-modification-action {
 	display: inline-block;
 }
 
-.history-modif-modification-modified-file {
+.history-modif-modified-file {
 	display: inline-block;
 }
 
-.history-modif-modification-date {
+.history-modif-date {
 	display: block;
 	padding-top: 10px;
 }
@@ -158,68 +102,52 @@
 /*					NEW CODE					*/
 
 .tree {
-	/*text-align: left;
+	text-align: left;
 	padding: 0px;
 	margin-left: 0px;
 	margin-top: 10px;
 	list-style-type: none;
-	font-size: 14px;*/
-	text-align: left;
-	margin-left: -40px;
-	list-style-type: none;
 	font-size: 14px;
-	position: relative;
-	width: 100%;
-	float: left;
-	margin-top: 5px;
 }
 
 .tree li {
-	position: relative;
 	list-style-type: none;
-	white-space: nowrap;
-	width: 100%;
+	padding-top: 5px;
 }
 
 .tree-project {
-	margin-top: 10px;
-	padding-top: 4px;
+	padding-left: 10px;
 	padding-bottom: 5px;
-	padding-left: 5px;
 	background-color: lightgray;
 	font-weight: bold;
-	width: 100%;
 }
 
 .tree-file {
-	margin-left: -15px;
-	white-space: nowrap;
+	margin-left: -20px;
+	padding: 2px;
 }
 
 .tree-file:hover {
+	text-decoration: underline;
 	cursor: pointer;
 }
 
 .tree-folder {
-	margin-top: 0px;
-	margin-left: -15px;
-	margin-right: auto;
-	padding-left: 0px;
-	padding-bottom: 1px;
+	margin-left: -20px;
+	padding: 2px;
 	font-weight: bold;
-	word-wrap: normal;
-	width: 100%;
 }
 
 .tree-folder:hover {
+	font-weight: bold;
 	cursor: pointer;
 }
 
 .folder {
 	width: 100%;
 	height: 35px;
-	margin-top: -1px;	/* Temporaire */
-	/* margin-left: -30px; */
+	margin-top: -15px;	/* Temporaire */
+	margin-left: -40px;
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -232,7 +160,7 @@
 .file {
 	width: 100%;
 	height: 35px;
-	/* margin-left: -30px; */
+	margin-left: -40px;
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -246,7 +174,7 @@
 }
 
 .folder:hover , .file:hover{
-	background-color: #e6e6e6;
+	background-color: #eee;
 	cursor: pointer;
 }
 
@@ -274,8 +202,44 @@
 
 .folder-currWorkingPeople, .file-currWorkingPeople {
 	text-align: center;
-	width: 25%;
+	width: 15%;
 	float: left;
+}
+
+.inline {
+	display: inline-block;
+}
+
+#tool-box {
+	width: 303px;
+	margin-right: 260px;
+	display: inline-block;
+	float:right;
+}
+/* Last item > no border right */
+#tool-box-delete {
+	border: none;
+}
+
+.tool-box-item {
+	border-right:1px solid #eee;
+	text-align: right;
+	font-size: 0.8em;
+	cursor: pointer;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-radius: 1px;
+	margin: 0;
+}
+
+.tool-box-item:hover {
+	background-color: #eee;
+}
+
+.tool-box-image {
+	width: 30px;
+	height: 30px;
+	vertical-align:middle;
 }
 
 /*					PREVIOUS CODE				*/
@@ -290,31 +254,21 @@
 	width: calc(100% - 400px);
 }
 
-#tool-box {
-	margin-right: 100px;
-	float:right;
-}
-
 #search-bar {
+	margin-left:50px;
 	display: inline-block;
 	width: 60%;
 }
 
 #file-structure {
-	display: inline;
 	position: fixed;
-	bottom: 0px;
-	top:150px;
+	bottom: 0;
+	top: 150px;
 	z-index: -1;
+	padding: 5px;
 	box-shadow: 0px 0px 3px #666;
-	width: 220px;
-	overflow: auto;
-	background-color: #eee;
-}
-
-#file-structure-auto {
-	display: inline-block;
-	position: absolute;
+	width: 200px;
+	background-color: white;
 }
 
 #file-history {
@@ -326,13 +280,11 @@
 	padding: 5px;
 	box-shadow: 0px 0px 3px #666;
 	width: 300px;
-	height: calc(100% - 150px - 10px);
-	overflow: auto;
 	background-color: white;
 }
 
 
 #file-content {
-	margin-left: 220px;
-	margin-right: 332px;	/*	Temporary */
+	margin-left: 250px;
+	margin-right: 292px;	/*	Temporary */
 }
