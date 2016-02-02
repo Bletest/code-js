@@ -1,13 +1,99 @@
 <div id="page-topbar">
 	<div id="search-bar">
-		<input style="margin-left:50px;" type="text" placeholder="Search">
+		<input style="margin-left:50px;" type="text" placeholder="Search"/>
+	</div>
+	<div id="path">
+		<div class="path-project">Project</div>
+		<img class="path-arrow" src="resources/ui/images/path-arrow.svg" alt="Path Arrow">
+
+		<div class="path-folder">Folder 1</div>
+		<img class="path-arrow" src="resources/ui/images/path-arrow.svg" alt="Path Arrow">
+		
+		<div class="path-folder">Folder 2</div>
+		<img class="path-arrow" src="resources/ui/images/path-arrow.svg" alt="Path Arrow">
+		
+		<div class="path-folder">Folder 3</div>
 	</div>
 	<div id="tool-box">
 		Tool box
 	</div>
 </div>
 <div id="page-content">
-	<div id="file-structure">Files structure</div>
-	<div id="file-content">Content</div>
-	<div id="file-history">History</div>
+	<div id="file-structure">	
+		<ul class="tree">
+			<li>
+				<li class="tree-project">Project Helios</li>
+				<ul>
+					<li class="tree-file">main.cpp</li>
+					<li class="tree-file">scene.cpp</li>
+					<li class="tree-file">shader.cpp</li>
+					<li class="tree-file">texture.cpp</li>
+					<li>
+						<li class="tree-folder">Images</li>
+						<ul>
+							<li class="tree-file">sun.jpg</li>
+							<li class="tree-file">earth.jpg</li>
+						</ul>
+					</li>
+				</ul>
+				<li class="tree-project">Project Coord Tracker</li>
+				<ul>
+					<li class="tree-file">manifest.xml</li>
+					<li class="tree-folder">res</li>
+					<ul>
+						<li class="tree-file">MainActivity.java</li>
+					</ul>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="file-content">
+		<div class="folder">
+			<div class="folder-icon"><img src="resources/ui/images/folder.png" alt="folder-image"/></div>
+			<div class="folder-title">Images</div>
+			<div class="folder-lastModified">26 Jan. 2016</div>
+			<div class="folder-currWorkingPeople">16</div>
+		</div>
+		<div class="file">
+			<div class="file-icon"><img src="resources/ui/images/file.png" alt="file-image"/></div>
+			<div class="file-title">main.cpp</div>
+			<div class="file-lastModified">12 Déc. 2015</div>
+			<div class="file-currWorkingPeople">5</div>
+		</div>
+		<div class="file">
+			<div class="file-icon"><img src="resources/ui/images/file.png" alt="file-image"/></div>
+			<div class="file-title">scene.cpp</div>
+			<div class="file-lastModified">17 Arvil 2013</div>
+			<div class="file-currWorkingPeople">1</div>
+		</div>
+		<div class="file">
+			<div class="file-icon"><img src="resources/ui/images/file.png" alt="file-image"/></div>
+			<div class="file-title">shader.cpp</div>
+			<div class="file-lastModified">03 Mars 2014</div>
+			<div class="file-currWorkingPeople">2</div>
+		</div>
+		<div class="file">
+			<div class="file-icon"><img src="resources/ui/images/file.png" alt="file-image"/></div>
+			<div class="file-title">texture.cpp</div>
+			<div class="file-lastModified">10 Févr. 2016</div>
+			<div class="file-currWorkingPeople">13</div>
+		</div>
+	</div>
+	<div id="file-history">
+		<div class="history-project-name">Project Name</div>
+		<div class="history-modif">
+			<div class="history-modif-modifier">
+				<img class="history-modif-modifier-avatar" src="resources/ui/images/modifier-avatar.png" alt="Modifier's avatar">
+				<div class="history-modif-modifier-name">Michael Ligotino</div>
+			</div>
+			<div class="history-modif-modification">Suppression du fichier</div>
+			<div class="history-modif-modified-file">XY</div>
+			<div class="history-modif-date">15.02.2027</div>
+		</div>
+	</div>
 </div>
+<script>
+$(function() {
+	$("ul.menu").superfish();
+});
+</script>

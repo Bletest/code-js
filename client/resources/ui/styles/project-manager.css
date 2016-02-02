@@ -1,3 +1,211 @@
+﻿/*					GUILLAUME					*/
+
+#path {
+	width: 60%;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+
+.path-project {
+	font-weight: bold;
+    display: inline-block;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    vertical-align: top;
+	padding-top: 1px;
+    padding-right: 6px;
+    padding-bottom: 1px;
+    padding-left: 6px;
+}
+.path-project:hover {
+	background-color: #eee;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+.path-folder {
+	display: inline-block;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    vertical-align: top;
+	padding-top: 1px;
+    padding-right: 6px;
+    padding-bottom: 1px;
+    padding-left: 6px;
+}
+.path-folder:hover {
+	background-color: #eee;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+.path-arrow {
+	display: inline-block;
+    height: 28px;
+}
+
+.history-project-name {
+    display: block;
+	font-weight: bold;
+    font-size: 18px;
+	height: 32px;
+	line-height: 32px;
+    vertical-align: top;
+	box-shadow: 0px 0px 3px #4da6ff;
+	margin-bottom: 20px;
+}
+
+.history-modif {
+	display: block;
+	box-shadow: 0px 0px 3px #4da6ff;
+	padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+
+.history-modif-modifier {
+	display: inline-block;
+	height: 50px;
+}
+
+.history-modif-modifier-avatar {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	border-radius: 5px;
+}
+
+.history-modif-modifier-name {
+	display: inline-block;
+    font-size: 16px;
+	font-weight: bold;
+}
+
+.history-modif-modification {
+	display: inline-block;
+}
+
+.history-modif-modified-file {
+	display: inline-block;
+}
+
+.history-modif-date {
+	display: block;
+	padding-top: 10px;
+}
+
+/*					NEW CODE					*/
+
+.tree {
+	text-align: left;
+	padding: 0px;
+	margin-left: 0px;
+	margin-top: 10px;
+	list-style-type: none;
+	font-size: 14px;
+}
+
+.tree li {
+	list-style-type: none;
+	padding-top: 5px;
+}
+
+.tree-project {
+	padding-left: 10px;
+	padding-bottom: 5px;
+	background-color: lightgray;
+	font-weight: bold;
+}
+
+.tree-file {
+	margin-left: -20px;
+	padding: 2px;
+}
+
+.tree-file:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.tree-folder {
+	margin-left: -20px;
+	padding: 2px;
+	font-weight: bold;
+}
+
+.tree-folder:hover {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.folder {
+	width: 100%;
+	height: 35px;
+	margin-top: -15px;	/* Temporaire */
+	margin-left: -40px;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 1px solid #a3a3a3;
+	vertical-align: middle;
+	line-height: 35px;
+	font-size: 15px;
+}
+
+.file {
+	width: 100%;
+	height: 35px;
+	margin-left: -40px;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-left: 1px solid #a3a3a3;
+	border-right: 1px solid #a3a3a3;
+	border-bottom: 1px solid #a3a3a3;
+	margin-top: 1px;
+	vertical-align: middle;
+	line-height: 35px;
+	font-size: 15px;
+}
+
+.folder:hover , .file:hover{
+	background-color: #eee;
+	cursor: pointer;
+}
+
+.folder-icon, .file-icon {
+	width: 2%;
+	text-align: center;
+	float: left;
+}
+
+.folder-icon img, .file-icon img {
+	width: 35px;
+}
+
+.folder-title, .file-title {
+	padding-left: 50px;
+	width: 38%;
+	float: left;
+}
+
+.folder-lastModified, .file-lastModified{
+	text-align: center;
+	width: 25%;
+	float: left;
+}
+
+.folder-currWorkingPeople, .file-currWorkingPeople {
+	text-align: center;
+	width: 15%;
+	float: left;
+}
+
+/*					PREVIOUS CODE				*/
+
 #page-topbar {
 	width: 100%;
 	display: inline-block;
@@ -13,7 +221,6 @@
 	float:right;
 }
 
-
 #search-bar {
 	display: inline-block;
 	width: 60%;
@@ -22,7 +229,7 @@
 #file-structure {
 	position: fixed;
 	bottom: 0;
-	top:150px;
+	top: 150px;
 	z-index: -1;
 	padding: 5px;
 	box-shadow: 0px 0px 3px #666;
@@ -34,15 +241,16 @@
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	top:150px;
+	top: 150px;
 	z-index: -1;
 	padding: 5px;
 	box-shadow: 0px 0px 3px #666;
-	width: 200px;
+	width: 300px;
 	background-color: white;
 }
 
 
 #file-content {
 	margin-left: 250px;
+	margin-right: 292px;	/*	Temporary */
 }
