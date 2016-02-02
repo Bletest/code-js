@@ -1,11 +1,55 @@
-﻿/*					GUILLAUME					*/
+﻿/*					FILTERS						*/
+
+#file-filters {
+	width: 100%;
+	height: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #a3a3a3;
+	vertical-align: middle;
+	line-height: 35px;
+	background-color: #eeeeee;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+#file-filters-name {
+	margin-left: 73px;
+	float: left;
+}
+
+.filtersTitle {
+	border: none;
+	border-bottom: 1px solid #4da6ff;
+	border-radius: 1px;
+	box-shadow: 0 2px 2px -2px #4da6ff;
+}
+
+#file-filters-date {
+	margin-left: 440px;
+	float: left;
+}
+
+#file-filters-workers {
+	margin-left: 130px;
+	float: left;
+}
+
+#file-filters-name img,
+#file-filters-date img,
+#file-filters-workers img {
+	width: 25px;
+	vertical-align: middle;
+}
+
+/*					GUILLAUME					*/
 
 #path {
-	overflow: hidden;
-	max-width:40%;
-	max-height: 30px;
-	margin-left: 45px;
-	float: left;
+	width: 60%;
+	margin-top: 10px;
+	margin-left: 50px;
 }
 
 .path-project {
@@ -15,9 +59,9 @@
     height: 28px;
     line-height: 28px;
     vertical-align: top;
-
+	padding-top: 1px;
     padding-right: 6px;
-
+    padding-bottom: 1px;
     padding-left: 6px;
 }
 .path-project:hover {
@@ -48,6 +92,24 @@
     height: 28px;
 }
 
+#page-content {
+}
+
+/*	--------------------------- FILE HISTORY ----------------------------*/
+
+#file-history {
+	position: fixed;
+	right: 0;
+	top: 151px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-left: 1px solid #a3a3a3;
+	width: 300px;
+	height: calc(100% - 150px - 10px);
+	overflow: auto;
+	background-color: #eeeeee;
+}
+
 .history-project-name {
     display: block;
 	font-weight: bold;
@@ -55,17 +117,22 @@
 	height: 32px;
 	line-height: 32px;
     vertical-align: top;
-	box-shadow: 0px 0px 3px #4da6ff;
-	margin-bottom: 20px;
+	margin-bottom: 1px;
+	padding: 2px;
+	text-align: center;
 }
 
 .history-modif {
 	display: block;
-	box-shadow: 0px 0px 3px #4da6ff;
 	padding-top: 2px;
-    padding-right: 2px;
-    padding-bottom: 2px;
-    padding-left: 2px;
+    padding-right: 4px;
+    padding-bottom: 8px;
+    padding-left: 4px;
+	border: 1px solid #a6a6a6;
+	border-radius: 2px;
+	box-shadow: 2px 1px 2px #eee;
+	background-color: #fafafa;
+	margin-bottom: 10px;
 }
 
 .history-modif-modifier {
@@ -77,7 +144,8 @@
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	border-radius: 5px;
+	border-radius: 1px;
+	vertical-align: middle;
 }
 
 .history-modif-modifier-name {
@@ -87,71 +155,91 @@
 }
 
 .history-modif-modification {
+	margin-left: 45px;
+}
+
+.history-modif-modification-action {
 	display: inline-block;
 }
 
-.history-modif-modified-file {
+.history-modif-modification-modified-file {
 	display: inline-block;
 }
 
-.history-modif-date {
+.history-modif-modification-date {
 	display: block;
 	padding-top: 10px;
 }
 
-/*					NEW CODE					*/
+/*	--------------------------- FILE STRUCTURE ----------------------------*/
+
+#file-structure {
+	position: fixed;
+	bottom: 0px;
+	top: 151px;
+	border-right: 1px solid #a3a3a3;
+	width: 220px;
+	overflow: auto;
+	background-color: #eeeeee;
+}
 
 .tree {
-	text-align: left;
 	padding: 0px;
-	margin-left: 0px;
-	margin-top: 10px;
-	list-style-type: none;
-	font-size: 14px;
+	margin: 0px;
 }
 
 .tree li {
 	list-style-type: none;
-	padding-top: 5px;
+	white-space: nowrap;
+	width: 100%;
+	font-size: 15px;
 }
 
 .tree-project {
-	padding-left: 10px;
+	padding-top: 4px;
 	padding-bottom: 5px;
-	background-color: lightgray;
+	padding-left: 5px;
+	text-decoration: underline;
 	font-weight: bold;
 }
 
 .tree-file {
-	margin-left: -20px;
-	padding: 2px;
+	margin-left: -15px;
+	white-space: nowrap;
 }
 
+.tree-project:hover,
+.tree-folder:hover,
 .tree-file:hover {
-	text-decoration: underline;
+	background-color: #d6d6d6;
+	border-radius: 1px;
 	cursor: pointer;
 }
 
 .tree-folder {
-	margin-left: -20px;
-	padding: 2px;
+	margin-left: -15px;
+	padding-bottom: 1px;
 	font-weight: bold;
+	word-wrap: normal;
 }
 
-.tree-folder:hover {
-	font-weight: bold;
-	cursor: pointer;
+/*	--------------------------- FILE CONTENT ----------------------------*/
+
+#file-content {
+	position: fixed;
+	top: 151px;
+	margin-left: 221px;
+	margin-right: 333px;
+	width: 100%;
 }
 
 .folder {
 	width: 100%;
 	height: 35px;
-	margin-top: -15px;	/* Temporaire */
-	margin-left: -40px;
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
-	border: 1px solid #a3a3a3;
+	border-bottom: 1px solid #a3a3a3;
 	vertical-align: middle;
 	line-height: 35px;
 	font-size: 15px;
@@ -160,12 +248,10 @@
 .file {
 	width: 100%;
 	height: 35px;
-	margin-left: -40px;
+	/* margin-left: -30px; */
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
-	border-left: 1px solid #a3a3a3;
-	border-right: 1px solid #a3a3a3;
 	border-bottom: 1px solid #a3a3a3;
 	margin-top: 1px;
 	vertical-align: middle;
@@ -174,7 +260,7 @@
 }
 
 .folder:hover , .file:hover{
-	background-color: #eee;
+	background-color: #eeeeee;
 	cursor: pointer;
 }
 
@@ -202,44 +288,8 @@
 
 .folder-currWorkingPeople, .file-currWorkingPeople {
 	text-align: center;
-	width: 15%;
+	width: 25%;
 	float: left;
-}
-
-.inline {
-	display: inline-block;
-}
-
-#tool-box {
-	width: 303px;
-	margin-right: 260px;
-	display: inline-block;
-	float:right;
-}
-/* Last item > no border right */
-#tool-box-delete {
-	border: none;
-}
-
-.tool-box-item {
-	border-right:1px solid #eee;
-	text-align: right;
-	font-size: 0.8em;
-	cursor: pointer;
-	padding-left: 2px;
-	padding-right: 2px;
-	border-radius: 1px;
-	margin: 0;
-}
-
-.tool-box-item:hover {
-	background-color: #eee;
-}
-
-.tool-box-image {
-	width: 30px;
-	height: 30px;
-	vertical-align:middle;
 }
 
 /*					PREVIOUS CODE				*/
@@ -254,37 +304,13 @@
 	width: calc(100% - 400px);
 }
 
+#tool-box {
+	margin-right: 100px;
+	float:right;
+}
+
 #search-bar {
-	margin-left:50px;
 	display: inline-block;
 	width: 60%;
 }
 
-#file-structure {
-	position: fixed;
-	bottom: 0;
-	top: 150px;
-	z-index: -1;
-	padding: 5px;
-	box-shadow: 0px 0px 3px #666;
-	width: 200px;
-	background-color: white;
-}
-
-#file-history {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	top: 150px;
-	z-index: -1;
-	padding: 5px;
-	box-shadow: 0px 0px 3px #666;
-	width: 300px;
-	background-color: white;
-}
-
-
-#file-content {
-	margin-left: 250px;
-	margin-right: 292px;	/*	Temporary */
-}
