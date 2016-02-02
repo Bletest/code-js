@@ -20,19 +20,47 @@
 </div>
 <div id="page-content">
 	<div id="file-structure">	
-		<ul class="tree">
-			<li>
+		<div id="file-structure-auto">
+			<ul class="tree">
+				<!--<li class="tree-project">Project Helios</li>
+				<li>
+					<ul>
+						<li class="tree-file">main.cpp</li>
+						<li class="tree-file">scene.cpp</li>
+						<li class="tree-file">shader.cpp</li>
+						<li class="tree-file">texture.cpp</li>
+						<li>
+							<li class="tree-folder">Images</li>
+							<ul>
+								<li class="tree-file">sun.jpg</li>
+								<li class="tree-file">earth.jpg</li>
+							</ul>
+						</li>
+					</ul>
+					<li class="tree-project">Project Coord Tracker</li>
+					<ul>
+						<li class="tree-file">manifest.xml</li>
+						<li class="tree-folder">res</li>
+						<ul>
+							<li class="tree-file">MainActivity.java</li>
+						</ul>
+					</ul>
+				</li>-->
 				<li class="tree-project">Project Helios</li>
 				<ul>
 					<li class="tree-file">main.cpp</li>
 					<li class="tree-file">scene.cpp</li>
-					<li class="tree-file">shader.cpp</li>
-					<li class="tree-file">texture.cpp</li>
 					<li>
 						<li class="tree-folder">Images</li>
 						<ul>
 							<li class="tree-file">sun.jpg</li>
 							<li class="tree-file">earth.jpg</li>
+							<li>
+								<li class="tree-folder">Sounds-mp333333333333333</li>
+								<ul>
+									<li class="tree-file">space</li>
+								</ul>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -44,10 +72,15 @@
 						<li class="tree-file">MainActivity.java</li>
 					</ul>
 				</ul>
-			</li>
-		</ul>
+			</ul>
+		</div>
 	</div>
 	<div id="file-content">
+		<div id="file-filters">
+			<div id="file-filters-name"><span class="filtersTitle">Name</span><img alt="arrow" src="resources/ui/images/downward-arrow.png"/></div>
+			<div id="file-filters-date"><span class="filtersTitle">Last modification</span><img alt="arrow" src="resources/ui/images/downward-arrow.png"/></div>
+			<div id="file-filters-workers"><span class="filtersTitle">Current workers</span><img alt="arrow" src="resources/ui/images/downward-arrow.png"/></div>
+		</div>
 		<div class="folder">
 			<div class="folder-icon"><img src="resources/ui/images/folder.png" alt="folder-image"/></div>
 			<div class="folder-title">Images</div>
@@ -80,15 +113,17 @@
 		</div>
 	</div>
 	<div id="file-history">
-		<div class="history-project-name">Project Name</div>
+		<div class="history-project-name">Project Helios</div>
 		<div class="history-modif">
 			<div class="history-modif-modifier">
 				<img class="history-modif-modifier-avatar" src="resources/ui/images/modifier-avatar.png" alt="Modifier's avatar">
 				<div class="history-modif-modifier-name">Michael Ligotino</div>
 			</div>
-			<div class="history-modif-modification">Suppression du fichier</div>
-			<div class="history-modif-modified-file">XY</div>
-			<div class="history-modif-date">15.02.2027</div>
+			<div class="history-modif-modification">
+				<div class="history-modif-modification-action">Suppression du fichier</div>
+				<div class="history-modif-modification-modified-file">XY</div>
+				<div class="history-modif-modification-date">15.02.2027</div>
+			</div>
 		</div>
 	</div>
 </div>
