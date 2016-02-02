@@ -1,8 +1,13 @@
 Bonjour I'm a test
 Modifications
 
+Chèvre des feuilles
 Modif 3
 Modif 4
+<<<<<<< .mine
+Modif 6
+Bonjour||||||| .r46
+Modif 6=======
 Modif 6
 test
-test hehe
+test hehe>>>>>>> .r51
