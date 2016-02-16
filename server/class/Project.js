@@ -3,9 +3,9 @@ CLASS: Project
 DESCRIPTION: Represents a project in CodeJS
 */
 
-function File(name) {
+module.exports = function() {
 	// Attributes
-	this.name = name;
+	this.name;
 	this.id;
 	this.lastModification;
 	this.users = [];
@@ -13,20 +13,20 @@ function File(name) {
 	this.creationDate = Date.now(); // Check if in seconds
 	
 	// Methods
-	this.getList() {
+	this.getList = function() {
 	};
-	this.getUsers() {
+	this.getUsers = function() {
 	};
-	this.addUser(User) {
+	this.addUser = function(User) {
 	};
-	this.addFile(File) {
+	this.addFile = function(File) {
 	};
-	this.removeUser(User) {
+	this.removeUser = function(User) {
 	};
-	this.updateLastModifDate(Date) {
+	this.updateLastModifDate = function() {
 	};
-	this.rename(name) {
+	this.rename = function(name) {
 	};
-	this.setPermission() {
+	this.setPermission = function() {
 	};
-}
+};

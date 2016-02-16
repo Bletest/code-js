@@ -3,7 +3,7 @@ CLASS: User
 DESCRIPTION: Is a user on CodeJS, extends a NodeJS client
 */
 
-function User() {
+module.exports = function() {
 	// Attributes
 	this.userId;
 	this.username;
@@ -13,12 +13,12 @@ function User() {
 	this.contacts = [];
 	
 	// Methods
-	this.disconnect() {
+	this.disconnect = function() {
 	};
-	this.remove() {
+	this.remove = function() {
 	};
-	this.changePassword() {
+	this.changePassword = function() {
 	};
-	this.updateLastConnectionDate(Date) {
+	this.updateLastConnectionDate = function() {
 	};
-}
+};

@@ -3,26 +3,26 @@ CLASS: File
 DESCRIPTION: Represents a file in CodeJS
 */
 
-function File(name, isFolder) {
+module.exports = function() {
 	// Attributes
-	this.name = name;
+	this.name;
 	this.id;
 	this.lastModification;
 	this.currentUsers = [];
 	this.creationDate = Date.now(); // Check if in seconds
-	this.isFolder = isFolder;
+	this.isFolder;
 	
 	// Methods
-	this.getCurrentUsers() {
+	this.getCurrentUsers = function() {
 	};
-	this.addCurrentUser(User) {
+	this.addCurrentUser = function(User) {
 	};
-	this.removeCurrentUser(User) {
+	this.removeCurrentUser = function(User) {
 	};
-	this.updateLastModifDate(Date) {
+	this.updateLastModifDate = function() {
 	};
-	this.rename(name) {
+	this.rename = function(name) {
 	};
-	this.edit() {
+	this.edit = function() {
 	};
-}
+};
