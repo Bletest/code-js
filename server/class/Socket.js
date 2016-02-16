@@ -14,12 +14,19 @@ module.exports = function() {
 		this.ws = new WebSocket({port: portNumber});
 		console.log("Websocket created");
 	};	
-	this.send = function(client, type, data) {
+	
+	this.sendMessage = function(client, message) {
+		try {
+			client.send(JSON.stringify({type: message.type, data: message.data});
+		} catch (e) {}
 	};
+	
 	this.broadcast = function() {
 	};
 	this.parse = function(data) {
 	};
 	this.createClient = function() {
+	};
+	this.handle = function() {
 	};
 };

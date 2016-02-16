@@ -7,8 +7,4 @@ module.exports = function() {
 	// Attributes
 	this.type;
 	this.data;
-	
-	// Methods
-	this.handle = function() {
-	};
 };

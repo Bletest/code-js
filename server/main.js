@@ -21,8 +21,11 @@ function init() {
 	socket.init(modules.config.global.websocket.port);
 	
 	// Websocket
-	socket.ws.on("connection", function() {
+	socket.ws.on("connection", function(data) {
 		console.log("Connection occured");
+		
+		// var message = socket.parse(data);
+		// socket.handle(message);
 	});
 }
 
