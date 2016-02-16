@@ -1,4 +1,4 @@
-var exports = {
+module.exports = {
 	websocket: {
 		port: 49111
 	},

@@ -9,9 +9,9 @@ module.exports = function() {
 	this.clients = [];
 	
 	// Methods
-	this.init = function() {
+	this.init = function(portNumber) {
 		var WebSocket = require('./../resources/node_modules/ws').Server;
-		this.ws = new WebSocket({port: 49111});
+		this.ws = new WebSocket({port: portNumber});
 		console.log("Websocket created");
 	};	
 	this.send = function(client, type, data) {

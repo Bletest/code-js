@@ -18,7 +18,7 @@ function init() {
 	
 	// Create socket
 	socket = new modules.classes.Socket();
-	socket.init();
+	socket.init(modules.config.global.websocket.port);
 	
 	// Websocket
 	socket.ws.on("connection", function() {
@@ -28,9 +28,9 @@ function init() {
 
 function includeLogic() {
 	// Link core files
-	modules.core.Editor = require("./core/editor.js");
-	modules.core.Login = require("./core/login.js");
-	modules.core.Project = require("./core/project.js");
+	modules.core.editor = require("./core/editor.js");
+	modules.core.login = require("./core/login.js");
+	modules.core.project = require("./core/project.js");
 	
 	// Link class files
 	modules.classes.Controller = require("./class/Controller.js");
@@ -43,8 +43,8 @@ function includeLogic() {
 	modules.classes.Socket = require("./class/Socket.js");
 	
 	// Link config
-	modules.config.Database = require("./resources/config/database.js");
-	modules.config.Global = require("./resources/config/global.js");
+	modules.config.database = require("./resources/config/database.js");
+	modules.config.global = require("./resources/config/global.js");
 }
 
 // Switch -> redirect core/xx

@@ -1,4 +1,4 @@
-var exports = {
+module.exports = {
 	path: "./data/database/CodeDB.db",
 	tables: {
 		project: {
