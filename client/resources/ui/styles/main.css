@@ -1,11 +1,11 @@
 /*			GENERAL 		*/
 
-header {
+/*header {
 	height: 150px;
 	width: 100%;
 	background-color: white;
 	border-bottom: 1px solid #a3a3a3;
-}
+}*/
 
 body {
 	margin: 0 auto;
@@ -33,7 +33,10 @@ body {
 	position: fixed;
 	bottom: 10px;
 	left: 10px;
+	height: 10px;
 }
+
+
 
 input[type="text"], input[type="password"]  {
 	font-size: 16px;
