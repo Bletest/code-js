@@ -3,14 +3,14 @@ CLASS: Client
 DESCRIPTION: Extends Socket.ws.client
 */
 
-function Client() {
+module.exports = function() {
 	// Attributes
 	this.user = {};
 	this.data = {};
 	
 	// Methods
-	this.remove() {
+	this.remove = function() {
 	};
-	this.ping() {
+	this.ping = function() {
 	};
-}
+};

@@ -3,12 +3,12 @@ CLASS: Message
 DESCRIPTION: Socket message handler
 */
 
-function Message() {
+module.exports = function() {
 	// Attributes
 	this.type;
 	this.data;
 	
 	// Methods
-	this.handle() {
+	this.handle = function() {
 	};
-}
+};

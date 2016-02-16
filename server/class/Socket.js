@@ -3,20 +3,23 @@ CLASS: Socket
 DESCRIPTION: Socket object
 */
 
-function Socket() {
+module.exports = function() {
 	// Attributes
 	this.ws;
 	this.clients = [];
 	
 	// Methods
-	this.init() {
+	this.init = function() {
+		var WebSocket = require('./../resources/node_modules/ws').Server;
+		this.ws = new WebSocket({port: 49111});
+		console.log("Websocket created");
+	};	
+	this.send = function(client, type, data) {
 	};
-	this.send(client, type, data) {
+	this.broadcast = function() {
 	};
-	this.broadcast() {
+	this.parse = function(data) {
 	};
-	this.parse(data) {
+	this.createClient = function() {
 	};
-	this.createClient() {
-	};
-}
+};

@@ -3,11 +3,11 @@ CLASS: Databas
 DESCRIPTION: Handles database interactions
 */
 
-function Database() {	
+module.exports = function() {	
 	// Methods
-	this.init() {
+	this.init = function() {
 		return false;
 	};
-	this.query(query) {
+	this.query = function(query) {
 	};
-}
+};
