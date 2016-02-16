@@ -2,25 +2,14 @@
 CLASS: Controller
 DESCRIPTION: Is the unique handler for every users and projects
 */
-var module;
 
-module.exports = function(user, file, project) {
+module.exports = function(userController, fileController, projectController) {
 	// Attributes
-	this.user = user;
-	this.project = file;
-	this.file = project;
+	this.userController = userController;
+	this.fileController = fileController;
+	this.projectController = projectController;
 	
 	// Methods
 	this.init = function() {
-		// 
-		this.user.init();
-		this.project.init();
-		this.file.init();
-		
-		return false;
-	};
-	
-	this.test = function() {
-		console.log("Goat in!");
 	};
 };

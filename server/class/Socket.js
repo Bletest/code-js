@@ -17,7 +17,7 @@ module.exports = function() {
 	
 	this.sendMessage = function(client, message) {
 		try {
-			client.send(JSON.stringify({type: message.type, data: message.data});
+			client.send(JSON.stringify({type: message.type, data: message.data}));
 		} catch (e) {}
 	};
 	
