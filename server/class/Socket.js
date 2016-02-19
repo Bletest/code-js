@@ -15,6 +15,14 @@ module.exports = function() {
 		console.log("Websocket created");
 	};	
 	
+	this.handleMessage = function(message) {
+		switch (message.type) {
+			case "type ZERO": 
+				console.log("Type zero it is");
+				break;
+		}
+	}
+	
 	this.sendMessage = function(client, message) {
 		try {
 			client.send(JSON.stringify({type: message.type, data: message.data}));

@@ -5,6 +5,7 @@
 var modules = {core:{}, classes:{}, config:{}};
 var controller;
 var socket;
+var database;
 
 // INITIALISATION
 
@@ -18,6 +19,10 @@ function init() {
 	// Create socket
 	socket = new modules.classes.Socket();
 	socket.init(modules.config.global.websocket.port);
+	
+	// Connection to database temporary!
+	database = new modules.classes.Database();
+	database.init(database);
 	
 	// Websocket
 	socket.ws.on("connection", function(client) {
@@ -35,7 +40,7 @@ function init() {
 		user.client.on("message", function(data) {
 			var message = new modules.classes.Message(data);
 			message.type = "type ZERO";
-			console.log(message.data);			
+			socket.handleMessage(message);			
 		});		
 		
 		// var message = socket.parse(data);
