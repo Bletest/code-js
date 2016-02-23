@@ -8,7 +8,6 @@ var socket;
 var database;
 
 // INITIALISATION
-
 function init() {
 	// Include all files
 	includeLogic();
@@ -23,6 +22,19 @@ function init() {
 	// Connection to database temporary!
 	database = new modules.classes.Database();
 	database.init(database);
+	
+	database.query("select * from user;", 0, function(row) {
+			// console.log(row);
+	});
+	
+	var values = ['Pixoff', 'password', 'www.rien.com/123.png', '0'];
+	var colToInsert = [
+					modules.config.database.tables.user.fields.username, 
+					modules.config.database.tables.user.fields.pass, 
+					modules.config.database.tables.user.fields.avatarURL, 
+					modules.config.database.tables.user.fields.inscriptionDate];
+					
+	database.insert(modules.config.database.tables.user.name, colToInsert, values);
 	
 	// Websocket
 	socket.ws.on("connection", function(client) {
