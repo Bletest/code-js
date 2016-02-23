@@ -55,7 +55,7 @@ a:visited {
 	color: #4da6ff;
 }
 
-input[type="text"], input[type="password"]  {
+input[type="email"], input[type="text"], input[type="password"]  {
 	font-size: 16px;
 	padding: 2px;
 	background: none;
@@ -67,7 +67,13 @@ input[type="text"], input[type="password"]  {
 	color: #666666;
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
+input[type="email"]:invalid, input[type="text"]:invalid, input[type="password"]:invalid  {
+	border-bottom: 2px solid orangered;
+	box-shadow: 0 2px 2px -2px orangered;
+}
+
+
+input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus {
 	color: black;
 }
 

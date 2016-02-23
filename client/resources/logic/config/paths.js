@@ -1,12 +1,12 @@
-var GLOBAL_PATHS = {};
+var CONFIG_PATHS = {};
 
-GLOBAL_PATHS["root"] = "/";
-GLOBAL_PATHS["resources"]		= GLOBAL_PATHS["root"] 		+ "resources/";
-GLOBAL_PATHS["pages"] 			= GLOBAL_PATHS["root"] 		+ "pages/";
-GLOBAL_PATHS["ui"] 				= GLOBAL_PATHS["resources"] + "ui/";
-GLOBAL_PATHS["logic"] 			= GLOBAL_PATHS["resources"] + "logic/";
-GLOBAL_PATHS["core"] 			= GLOBAL_PATHS["logic"] 	+ "core/";
-GLOBAL_PATHS["config"]			= GLOBAL_PATHS["logic"] 	+ "config/";
-GLOBAL_PATHS["tools"] 			= GLOBAL_PATHS["logic"]		+ "tools/";
-GLOBAL_PATHS["images"] 			= GLOBAL_PATHS["ui"] 		+ "images/";
-GLOBAL_PATHS["styles"] 			= GLOBAL_PATHS["ui"]		+ "styles/";
+CONFIG_PATHS["root"] = "/trunk/client/";
+CONFIG_PATHS["resources"]		= CONFIG_PATHS["root"] 		+ "resources/";
+CONFIG_PATHS["pages"] 			= CONFIG_PATHS["root"] 		+ "pages/";
+CONFIG_PATHS["ui"] 				= CONFIG_PATHS["resources"] + "ui/";
+CONFIG_PATHS["logic"] 			= CONFIG_PATHS["resources"] + "logic/";
+CONFIG_PATHS["core"] 			= CONFIG_PATHS["logic"] 	+ "core/";
+CONFIG_PATHS["config"]			= CONFIG_PATHS["logic"] 	+ "config/";
+CONFIG_PATHS["tools"] 			= CONFIG_PATHS["logic"]		+ "tools/";
+CONFIG_PATHS["images"] 			= CONFIG_PATHS["ui"] 		+ "images/";
+CONFIG_PATHS["styles"] 			= CONFIG_PATHS["ui"]		+ "styles/";

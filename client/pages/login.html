@@ -1,10 +1,16 @@
-<div id="login-form">
-	<label>Email / Username</label> <input type="text" placeholder="Your email">
-	<label>Password</label> <input type="password" placeholder="Your password">
-	<div id="sign-up-button">
-		<a href="#">Sign up</a><span style="color: #4da6ff;font-size: 14px;"> / </span><a href="#">Forgot password?</a>
-	</div>
-	<div id="log-in-button">
-		<input type="button" value="Log in"/>
+<div id="page-header"></div>
+<div id="page-content">
+	<div id="login-form">
+		<label>Username</label> <input pattern=".{3,}" id="login-username" type="text" placeholder="Your email" title="3 characters minimum">
+		<label>Password</label> <input pattern=".{3,}"  id="login-password" type="password" placeholder="Your password" title="3 characters minimum">
+		<span id="repeat-password-area"><label>Repeat password</label> <input pattern=".{3,}"  id="login-password-repeat" type="password" placeholder="Please repeat your password." title="3 characters minimum"></span>
+		<div id="signup-area">
+			<a href="#" id="login-sign-up">Sign up</a>
+			<span style="color: #4da6ff;font-size: 14px;"> / </span>
+			<a href="#" id="login-forgot">Forgot password?</a>
+		</div>
+		<div id="login-area">
+			<input id="login-button" type="button" value="Log in"/>
+		</div>
 	</div>
 </div>

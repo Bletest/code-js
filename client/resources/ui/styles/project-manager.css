@@ -334,8 +334,7 @@
 }
 
 #top-bar {
-	display: inline-block;
-	width: calc(100% - 400px);
+
 }
 
 #search-bar {
