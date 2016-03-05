@@ -1,24 +1,18 @@
-<div id="page-topbar">
-	<header>
-		<div id="logo"><span style="color:#666">Code</span><span style="color:#4da6ff;">JS</span></div>
-		<div id="menu">
-			<div class="menu-elements">
-				File
-			</div>
-			<div class="menu-elements">
-				Edit
-			</div>
-			
-			<div id="tools">
-				<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="New File" />
-				<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="Open File" />
-				<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="Undo" />
-				<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="Redo" />
-				<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="Search" />
-				<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="Replace" />
-			</div>
+<div id="page-header">
+	<div id="menu">
+		<div class="menu-elements">File</div>
+		<div class="menu-elements">Edit</div>
+		<div onclick="initCodeMirror()" class="menu-elements">Init CodeMirror</div>
+		
+		<div id="tools">
+			<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="New File" />
+			<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="Open File" />
+			<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="Undo" />
+			<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="Redo" />
+			<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="Search" />
+			<img class="tools-elements" src="resources/ui/images/path-arrow.svg" alt="Replace" />
 		</div>
-	</header>
+	</div>
 	<div id="menu-files">
 		<div class="menu-files-elements">New</div>
 		<div class="menu-files-elements">Open</div>
@@ -36,91 +30,40 @@
 		<div class="menu-edition-elements">Search</div>
 		<div class="menu-edition-elements">Replace</div>
 	</div>
+	
+	<div id="tab">
+		<div class="tab-elements">main.cpp<img class="tab-elements-close" src="resources/ui/images/path-arrow.svg" alt="Close" /></div>
+		<div class="tab-elements">scene.cpp<img class="tab-elements-close" src="resources/ui/images/path-arrow.svg" alt="Close" /></div>
+	</div>
 </div>
 
-<div id="page-content">
-	<div id="tab">
-		<div class="tab-elements">Onglet1
-		<img class="tab-elements-close" src="resources/ui/images/path-arrow.svg" alt="Close" /></div><!--
-		
-		--><div class="tab-elements">Onglet2
-		<img class="tab-elements-close" src="resources/ui/images/path-arrow.svg" alt="Close" /></div><!--
-		
-		--><div class="tab-elements">Onglet3
-		<img class="tab-elements-close" src="resources/ui/images/path-arrow.svg" alt="Close" /></div>
-	</div>
-	
+<div id="page-content">		
 	<div id="code-mirror">
 		<textarea id="mirror-textarea"></textarea>
 	</div>
-	<div id="right-pannel">
-		<div id="tree">
-			<div id="file-structure">
-				<ul class="tree">
-					<li class="tree-project">Project Helios</li>
-					<ul>
-						<li class="tree-file">main.cpp</li>
-						<li class="tree-file">scene.cpp</li>
-						<li>
-							<li class="tree-folder">Images</li>
-							<ul>
-								<li class="tree-file">sun.jpg</li>
-								<li class="tree-file">earth.jpg</li>
-								<li>
-									<li class="tree-folder">Sounds-mp333333333333333</li>
-									<ul>
-										<li class="tree-file">space.mp3</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<li class="tree-project">Project Coord Tracker</li>
-					<ul>
-						<li class="tree-file">manifest.xml</li>
-						<li class="tree-folder">res</li>
+	
+	<div id="left-pannel">
+		<div id="file-structure">
+			<ul class="tree">
+				<li class="tree-project">Project Helios</li>
+				<ul>
+					<li class="tree-file"><img alt="img" src="resources/ui/images/file.png"/>main.cpp</li>
+					<li class="tree-file"><img alt="img" src="resources/ui/images/file.png"/>scene.cpp</li>
+					<li>
+						<li class="tree-folder"><img alt="img" src="resources/ui/images/folder.png"/>Images</li>
 						<ul>
-							<li class="tree-file">MainActivity.java</li>
+							<li class="tree-file"><img alt="img" src="resources/ui/images/file.png"/>sun.jpg</li>
+							<li class="tree-file"><img alt="img" src="resources/ui/images/file.png"/>earth.jpg</li>
+							<li>
+								<li class="tree-folder"><img alt="img" src="resources/ui/images/folder.png"/>Sounds-mp333333333333333</li>
+								<ul>
+									<li class="tree-file"><img alt="img" src="resources/ui/images/file.png"/>space.mp3</li>
+								</ul>
+							</li>
 						</ul>
-					</ul>
-					<li class="tree-project">Project Helios</li>
-					<ul>
-						<li class="tree-file">main.cpp</li>
-						<li class="tree-file">scene.cpp</li>
-						<li>
-							<li class="tree-folder">Images</li>
-							<ul>
-								<li class="tree-file">sun.jpg</li>
-								<li class="tree-file">earth.jpg</li>
-								<li>
-									<li class="tree-folder">Sounds-mp333333333333333</li>
-									<ul>
-										<li class="tree-file">space.mp3</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<li class="tree-project">Project Helios</li>
-					<ul>
-						<li class="tree-file">main.cpp</li>
-						<li class="tree-file">scene.cpp</li>
-						<li>
-							<li class="tree-folder">Images</li>
-							<ul>
-								<li class="tree-file">sun.jpg</li>
-								<li class="tree-file">earth.jpg</li>
-								<li>
-									<li class="tree-folder">Sounds-mp333333333333333</li>
-									<ul>
-										<li class="tree-file">space.mp3</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
+					</li>
 				</ul>
-			</div>
+			</ul>
 		</div>
 		<div id="chat">
 			<div id="chat-read">

@@ -1,4 +1,4 @@
-header {
+/* header {
 	height: 75px;
 	width: 100%;
 	background-color: white;
@@ -10,8 +10,8 @@ body {
 	background-color: #F7F7F7;
 	font-family: Verdana, Helvetica, sans-serif;
 	font-size: 16px;
-}
-
+} */
+/*
 #logo {
 	font-size: 70px;
 	font-family: Calibri;
@@ -19,7 +19,8 @@ body {
 	cursor: pointer;
 	display: inline-block;
 	vertical-align: middle;
-}
+} 
+*/
 
 #menu {
 	margin-left: 50px;
@@ -98,8 +99,8 @@ body {
 
 #tab {
 	width: 100%;
-	height: 22px;
-	background-color: #F5F5F5;
+	height: 25px;
+	/* background-color: #F5F5F5; */
 	margin-top: 2px;
 	margin-left: 2px;
 	padding-bottom: 1px;
@@ -107,6 +108,8 @@ body {
 }
 
 .tab-elements {
+	margin-right: 5px;
+	padding: 2px;
 	display: inline-block;
 	background-color: #f1f1f1;
 	border:  1px solid #e6e6e6;
@@ -133,21 +136,21 @@ body {
 
 /*    Code-Mirror  */
 #code-mirror {
-	height: 100%;
+	width: 100%;
 	position: fixed;
-	top: 101px;
-	left: 0px;
-	right: 320px;
+	top: 180px;
+	left: 220px;
 	background-color: none;
 }
 
 #mirror-textarea {
+	width: 100%;
 	background-color: none;
 }
 
-
 /*Right Zone */
 
+/* Obsolete */
 #right-pannel {
 	border-left: 1px solid #a3a3a3;
 	position: fixed;
@@ -157,71 +160,23 @@ body {
 }
 
 /*    Tree    */
-#tree {
-	padding-left: 5px;
-	padding-right: 0px;
-	width: 315px;
-}
-
-#file-structure {
+/* Obsolete */
+#right-file-structure {
 	position: fixed;
 	height: 400px;
 	top: 101px;
+	right: 0;
 	width: 315px;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
 
-.tree {
-	padding: 0px;
-	margin: 0px;
-}
-
-.tree li {
-	list-style-type: none;
-	white-space: nowrap;
-	width: 100%;
-	font-size: 15px;
-}
-
-.tree-project {
-	padding-top: 4px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-	text-decoration: underline;
-	font-weight: bold;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.tree-file,
-.tree-folder {
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	margin-left: -20px;
-	padding-right: 20px;
-}
-
-.tree-folder {
-	font-weight: bold;
-}
-
-.tree-project:hover,
-.tree-folder:hover,
-.tree-file:hover {
-	background-color: #d6d6d6;
-	border-radius: 1px;
-	cursor: pointer;
-}
-
 #chat {
-	position:fixed;
+	position: fixed;
 	top: 510px;
-	border-top: 1px solid #a3a3a3;
+	border-top: 1px solid #e3e3e3;
 	display: block;
-	width: 315px;
+	width: 220px;
 }
 
 #chat-read {
@@ -230,6 +185,7 @@ body {
 	height: 265px;
 	overflow-y: auto;
 	overflow-x: hidden;
+	font-size: 12px;
 }
 
 .chat-read-elements {
@@ -255,24 +211,23 @@ body {
 
 #chat-write {
 	position: fixed;
-	top: 775px;
-	bottom: 805px;
+	bottom: 0;
 	padding-top: 5px;
 	display: block;
-	width: 315px;
+	width: 220px;
 	height: 25px;
 }
 
 #chat-write-input {
 	margin-left: 5px;
 	display: inline-block;
-	width: 245px;
+	width: 180px;
 	float: left;
 }
 
 #chat-write-send {
 	display: inline-block;
-	width: 60px;
+	width: 40px;
 	float: right;
 }
 

@@ -40,6 +40,14 @@ function changePage(fileName, callBack) {
 	// Add the style
 	// $("head").append('<link rel="stylesheet" href="'+CONFIG_PATHS["styles"] + fileName +'.css" type="text/css" />');
 	$("head").append('<link rel="stylesheet" href="'+CONFIG_PATHS["relativeStyles"] + fileName +'.css" type="text/css" />');
+
+	if (fileName == "editor") {
+		$("head").append('<script src="resources/logic/tools/codemirror-5.12/lib/codemirror.js"></script>');
+		$("head").append('<script src="resources/logic/core/editor.js"></script>');
+		$("head").append('<link rel="stylesheet" href="resources/logic/tools/codemirror-5.12/lib/codemirror.css" type="text/css" />');
+		$("head").append('<script src="resources/logic/tools/codemirror-5.12/mode/javascript/javascript.js"></script>');
+	}
+	
 	// $("#top-bar").load(CONFIG_PATHS["pages"] + fileName + CONFIG_GLOBAL["htmlExtension"] + " #page-header", onLoadFinished);
 	$("#top-bar").load(CONFIG_PATHS["relativePages"] + fileName + CONFIG_GLOBAL["htmlExtension"] + " #page-header", onLoadFinished);
 	//$("#content").load(CONFIG_PATHS["pages"] + fileName + CONFIG_GLOBAL["htmlExtension"] + " #page-content", onLoadFinished);
