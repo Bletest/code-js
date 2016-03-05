@@ -3,15 +3,14 @@ header {
 	height: 150px;
 	width: 100%;
 	background-color: white;
-	border-bottom: 1px solid #a3a3a3;
+	border-bottom: 1px solid #dadada;
 }
 
 body {
 	margin: 0 auto;
-	background-color: #F7F7F7;
+	background-color: rgb(249, 249, 249);
 	font-family: Verdana, Helvetica, sans-serif;
-	font-size: 16px;
-	
+	font-size: 16px;	
 }
 
 #logo {
@@ -22,7 +21,10 @@ body {
 }
 
 #top-bar {
-	margin-left: 50px;
+	position: fixed;
+	width: 100%;
+	top: 65px;
+	left: 425px;
 	display: inline-block;
 }
 
@@ -100,4 +102,10 @@ input[type="button"]:focus, button:focus {
 
 input[type="button"]:active, button:active {
 	background-color: #3d84cc;
+}
+
+/*	--------------------------- TOOLS CLASSES ----------------------------*/
+
+.inline {
+	display: inline-block;
 }

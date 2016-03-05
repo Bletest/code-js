@@ -1,59 +1,18 @@
-﻿/*					FILTERS						*/
-
-#file-filters {
-	width: 100%;
-	height: 25px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 0px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #a3a3a3;
-	vertical-align: middle;
-	line-height: 35px;
-	background-color: #eeeeee;
-	font-size: 15px;
-	cursor: pointer;
-}
-
-#file-filters-name {
-	margin-left: 73px;
-	float: left;
-}
-
-.filtersTitle {
-	border: none;
-	border-bottom: 1px solid #4da6ff;
-	border-radius: 1px;
-	box-shadow: 0 2px 2px -2px #4da6ff;
-}
-
-#file-filters-date {
-	margin-left: 440px;
-	float: left;
-}
-
-#file-filters-workers {
-	margin-left: 130px;
-	float: left;
-}
-
-#file-filters-name img,
-#file-filters-date img,
-#file-filters-workers img {
-	width: 25px;
-	vertical-align: middle;
-}
-
-.inline {
+﻿/*	--------------------------- PAGE HEADER ----------------------------*/
+#search-bar {
 	display: inline-block;
+	width: 55%;
+	margin-bottom: 20px;
 }
 
 #tool-box {
 	/* TODO: Same alignement with path bar */
+	/*position: fixed;
+	right: 300px;*/
 	width: 303px;
-	margin-right: 260px;
+	margin-right: 725px;		/* (top-bar left)425 + (file-history width)300 */
 	display: inline-block;
-	float:right;
+	float: right;
 }
 /* Last item > no border right */
 #tool-box-delete {
@@ -72,7 +31,7 @@
 }
 
 .tool-box-item:hover {
-	background-color: #eee;
+	background-color: #eeeeee;
 }
 
 .tool-box-image {
@@ -81,10 +40,7 @@
 	vertical-align:middle;
 }
 
-/*					GUILLAUME					*/
-
 #path {
-	margin-left: 50px;
 	float: left;
 }
 
@@ -98,10 +54,11 @@
 	padding-top: 1px;
     padding-right: 6px;
     padding-bottom: 1px;
-    padding-left: 6px;
+    padding-left: 0px;		/* Previous value: 6 -> changed because it changed alignment */
 }
-.path-project:hover {
-	background-color: #eee;
+.path-project:hover, 
+.path-folder:hover {
+	background-color: #eeeeee;
 	cursor: pointer;
 	border-radius: 2px;
 }
@@ -117,18 +74,10 @@
     padding-bottom: 1px;
     padding-left: 6px;
 }
-.path-folder:hover {
-	background-color: #eee;
-	cursor: pointer;
-	border-radius: 2px;
-}
 
 .path-arrow {
 	display: inline-block;
     height: 28px;
-}
-
-#page-content {
 }
 
 /*	--------------------------- FILE HISTORY ----------------------------*/
@@ -139,17 +88,18 @@
 	top: 151px;
 	padding-left: 5px;
 	padding-right: 5px;
-	border-left: 1px solid #a3a3a3;
+	border-left: 1px solid #e3e3e3;
 	width: 300px;
 	height: calc(100% - 150px - 10px);
 	overflow: auto;
-	/*background-color: #eeeeee;*/
+	
+	font-family: Tahoma, Geneva, sans-serif;
 }
 
 .history-project-name {
     display: block;
 	font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 	height: 32px;
 	line-height: 32px;
     vertical-align: top;
@@ -161,35 +111,38 @@
 .history-modif {
 	display: block;
 	padding: 10px;
-	border: 1px solid #a6a6a6;
+	border: 1px solid #e3e3e3;
 	border-radius: 2px;
 	box-shadow: 2px 1px 2px #eee;
 	background-color: #fefefe;
 	margin-bottom: 10px;
-	line-height: 8px;
+	line-height: 10px;
+	font-size: 15px;
 }
 
 .history-modif-modifier {
 	display: inline-block;
-	height: 50px;
+	margin-bottom: 10px;
 }
 
 .history-modif-modifier-avatar {
 	display: inline-block;
-	height: 40px;
-	width: 40px;
-	border-radius: 1px;
+	height: 35px;
+	width: 35px;
+	border-radius: 2px;
 	vertical-align: middle;
+	box-shadow: 2px 2px 2px #EEEEEE;
 }
 
 .history-modif-modifier-name {
 	display: inline-block;
-    font-size: 16px;
 	font-weight: bold;
 }
 
 .history-modif-modification {
-	margin-left: 45px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-top: 10px;
+	border-top: 1px solid #e3e3e3;
 }
 
 .history-modif-modification-action {
@@ -203,6 +156,10 @@
 .history-modif-modification-date {
 	display: block;
 	padding-top: 10px;
+	font-size: 10px;
+	font-weight: bold;
+	font-style: italic;
+	color: #a3a3a3;
 }
 
 /*	--------------------------- FILE STRUCTURE ----------------------------*/
@@ -211,8 +168,9 @@
 	position: fixed;
 	bottom: 0px;
 	top: 151px;
-	border-right: 1px solid #a3a3a3;
+	border-right: 1px solid #e3e3e3;
 	width: 220px;
+	font-family: Tahoma, Geneva, sans-serif;
 }
 
 .tree {
@@ -231,8 +189,6 @@
 	padding-top: 4px;
 	padding-bottom: 5px;
 	padding-left: 5px;
-	text-decoration: underline;
-	font-weight: bold;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
@@ -243,23 +199,68 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
-	margin-left: -20px;
-	padding-right: 20px;
+	padding: 2px;
+	padding-left: 20px;
+	margin-left: -35px;		/* Get by javascript? */
 }
 
-.tree-folder {
-	font-weight: bold;
+.tree-folder img,
+.tree-file img {
+	height: 24px;
+	width: auto;
+	border-radius: 2px;
+	margin-right: 5px;
+	margin-bottom: -5px;
 }
 
 .tree-project:hover,
 .tree-folder:hover,
 .tree-file:hover {
-	background-color: #d6d6d6;
-	border-radius: 1px;
+	background-color: #eeeeee;
+	border-radius: 2px;
 	cursor: pointer;
 }
 
-/*	--------------------------- FILE CONTENT ----------------------------*/
+/*	--------------------------- PAGE CONTENT (CENTER) ----------------------------*/
+
+#file-filters {
+	width: 100%;
+	height: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	vertical-align: middle;
+	line-height: 35px;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+#file-filters-name {
+	margin-left: 73px;
+	float: left;
+}
+
+#file-filters-date {
+	margin-left: 440px;
+	float: left;
+}
+
+#file-filters-workers {
+	margin-left: 130px;
+	float: left;
+}
+
+#file-filters-name img,
+#file-filters-date img,
+#file-filters-workers img {
+	cursor: pointer;
+	width: 25px;
+	vertical-align: middle;
+}
+
+.filtersTitle {
+	cursor: pointer;
+}
 
 #file-content {
 	position: fixed;
@@ -268,29 +269,21 @@
 	right: 331px;
 }
 
+.file, 
 .folder {
 	width: 100%;
 	height: 35px;
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
-	border-bottom: 1px solid #a3a3a3;
 	vertical-align: middle;
 	line-height: 35px;
 	font-size: 15px;
-}
-
-.file {
-	width: 100%;
-	height: 35px;
-	padding: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-bottom: 1px solid #a3a3a3;
-	margin-top: 1px;
-	vertical-align: middle;
-	line-height: 35px;
-	font-size: 15px;
+	
+	background-color: white;
+	border-radius: 2px;
+	box-shadow: 2px 2px 2px #EEEEEE;
+	margin-bottom: 14px;
 }
 
 .folder:hover , .file:hover{
@@ -325,21 +318,3 @@
 	width: 25%;
 	float: left;
 }
-
-/*					PREVIOUS CODE				*/
-
-#page-topbar {
-	width: 100%;
-	display: inline-block;
-}
-
-#top-bar {
-
-}
-
-#search-bar {
-	display: inline-block;
-	width: 60%;
-	margin-bottom: 30px;
-}
-
