@@ -36,7 +36,8 @@ function init() {
 		client.on("message", function(data) {
 			var message = new modules.classes.Message(JSON.parse(data));
 			console.log("TYPE=" + message.type + " " + "DATA=" + message.data);
-			socket.handleMessage(message, controller);			
+			socket.handleMessage(message, controller);
+			socket.sendMessage(client, message);
 		});
 		
 		// var message = socket.parse(data);

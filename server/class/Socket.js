@@ -18,7 +18,7 @@ module.exports = function() {
 	this.handleMessage = function(message, controller) {
 		switch (message.type) {
 			case "login":
-				controller.userController.login(message.data.user);
+				controller.userController.login(message.data);
 				break;
 			case "user-leave": 
 				controller.userController.removeUser(message.data.user);
