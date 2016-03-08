@@ -1,0 +1,66 @@
+#connection-status {
+	width:100%;
+	text-align:center;
+	margin-top: 50px;
+}
+
+#connection-text {
+	font-size: 24px;
+	margin-bottom: 50px;
+	color:#666;
+	
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 2s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#connection-status img {
+	width:100px;
+	height: auto;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+.loading {
+    animation: 2500ms roty infinite ease;
+}
+
+.dead {
+	transform: rotate(180deg);
+}
+
+@keyframes roty {
+    0% { transform: rotate(0deg); }
+    25%  { transform: rotate(360deg); }
+    50%  { transform: rotate(720deg); }
+    75%  { transform: rotate(1080deg); }
+    100%  { transform: rotate(1440deg); }
+}
+
