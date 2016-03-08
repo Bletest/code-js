@@ -17,11 +17,13 @@ module.exports = function() {
 	
 	this.queryPrep = function(query, valuesArray, callback) {
 		if (valuesArray.length > 0) {
-			db.run("BEGIN TRANSACTION");
-			db.run(query, valuesArray, function(err, row) {
-				callback(err, row);
+			db.serialize(function () {
+				db.run("BEGIN TRANSACTION");
+				db.run(query, valuesArray, function(err, row) {
+					callback(err, row);
+				});
+				db.run("END");
 			});
-			db.run("END");
 		}
 		else {
 			db.serialize(function() {

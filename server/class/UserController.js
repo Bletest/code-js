@@ -21,11 +21,12 @@ module.exports = function(database, tables) {
 	};
 	
 	this.login = function(user) {
+		console.log(user.name);
 		this.database.queryPrep("SELECT " + this.tables.user.fields.pass + ", " + this.tables.user.fields.userId + " FROM " + this.tables.user.name + " WHERE " + this.tables.user.fields.username + " = ?", [user.name], function(err, row) {
 			if (err) 
 				console.log(err);
 			else {
-				console.log(row[0]);
+				console.log(row);
 				if (user.pass == row[0]) {
 					var d = new Date();
 					this.database.update(tables.user.fields, [tables.user.fields.lastConnection], [d.getTime()], tables.user.fields.name, user.name);

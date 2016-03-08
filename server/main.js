@@ -25,6 +25,13 @@ function init() {
 	// Create controller
 	controller = new modules.classes.Controller(new modules.classes.UserController(database, tables), new modules.classes.FileController(), new modules.classes.ProjectController());
 			
+	database.queryPrep("SELECT * FROM user WHERE Username = ?;", [['michael']], function(err, row) {
+		if (err)
+			console.log(err);
+		else
+			console.log(row);
+	});
+			
 	// Websocket
 	socket.ws.on("connection", function(client) {
 		// Initialization of user
