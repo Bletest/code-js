@@ -5,13 +5,13 @@ DESCRIPTION: Handles database interactions
 
 module.exports = function() {	
 	// Attributes
-	this.fileName = "M:/CodeJS/trunk/server/data/database/CodeDB.db";
+	this.fileName = __dirname + "\\..\\data\\database\\CodeDB.db";
 	this.sqlite3;
 	var db;
 	
 	// Methods
 	this.init = function(sqlite) {
-		this.sqlite3 = require('M:/CodeJS/trunk/server/resources/node_modules/sqlite3').verbose();
+		this.sqlite3 = require(__dirname + '\\..\\resources\\node_modules\\sqlite3').verbose();
 		db = new this.sqlite3.Database(this.fileName);
 	};
 	
