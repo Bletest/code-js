@@ -8,4 +8,8 @@ var Connecting = function(){
 		$("#connection-text").text("Cannot reach the server");
 		$("#connection-text").css("color", "red");
 	};
+	
+	this.login = function() {
+		
+	}
 };
