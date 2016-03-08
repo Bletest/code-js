@@ -1,26 +1,26 @@
-var login, editor, manager, connecting, socket;
-var ws, lastReadyState;
+var modules = {};
 
-// Include the paths config
-$.getScript("resources/logic/config/paths.js", function() {
-	// Load the config
-	$.getScript(CONFIG_PATHS["config"] + "global.js", function() {
-		// When the config is loaded, changePage
-		changePage("connecting", function(){
-			connecting = new Connecting();
-			connecting.init();
+function init() {
+	// Include the paths config
+	$.getScript("resources/logic/config/paths.js", function() {
+		// Load the config
+		$.getScript(CONFIG_PATHS["config"] + "global.js", function() {
+			// When the config is loaded, changePage
+			changePage("connecting", function(){
+				modules.connecting = new Connecting();
+				modules.connecting.init();
+			});
+		});
+		
+		$.getScript(CONFIG_PATHS["config"] + "default-server.js", function() {
+			$.getScript(CONFIG_PATHS["class"] + "Socket.js", function() {
+				modules.socket = new Socket();
+				modules.socket.init();
+				setInterval(function(){modules.socket.handleStateChange()}, 50);
+			});
 		});
 	});
-	
-	$.getScript(CONFIG_PATHS["config"] + "default-server.js", function(){
-		$.getScript(CONFIG_PATHS["class"] + "Socket.js", function(){
-			socket = new Socket();
-			socket.init();
-			setInterval(socket.handleStateChange, 50);
-		});
-	});
-});
-
+}
 
 // Load #top-bar and #content from filename
 // Probably a good idea to move on a tool.js
@@ -57,3 +57,4 @@ function changePage(fileName, callBack) {
 	$("#content").load(CONFIG_PATHS["pages"] + fileName + CONFIG_GLOBAL["htmlExtension"] + " #page-content", onLoadFinished);
 }
 
+init();

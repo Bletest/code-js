@@ -1,6 +1,9 @@
 var Socket = function() {
+	this.ws = "test";
+	this.lastReadyState = -1;
+
 	this.init = function() {
-		ws = new WebSocket("ws://" + CONFIG_SERVER["DEFAULT_IP"] + ":" + CONFIG_SERVER["DEFAULT_PORT"]);
+		this.ws = new WebSocket("ws://" + CONFIG_SERVER["DEFAULT_IP"] + ":" + CONFIG_SERVER["DEFAULT_PORT"]);
 	};
 	
 	this.handleStateChange = function() {
@@ -9,26 +12,38 @@ var Socket = function() {
 			1: connection ok
 			2: request received
 		*/
-		if(lastReadyState == ws.readyState)
+
+		if(!this.ws || this.lastReadyState == this.ws.readyState)
 			return;
-		
-		switch(ws.readyState) {
+		switch(this.ws.readyState) {
 			case 0:
 				$("#connection-image").addClass("loading");
 				break;
 			case 1:
 				changePage("login", function(){
-					login = new Login();
-					login.init();
+					modules.login = new Login();
+					modules.login.init();
 				});
 				break;
 			case 3:
 				changePage("connecting", function(){
-					connecting.displayError();
+					modules.connecting.displayError();
 				});
 				break;
 		}
 		
-		lastReadyState = ws.readyState;
+		this.lastReadyState = this.ws.readyState;
+	};
+	
+	this.handleMessage = function(message) {
+		switch(message.type) {
+			case "":
+				// .......
+				break;
+		}
+	};
+	
+	this.sendMessage(message) {
+		this.ws.send(JSON.stringify({data:message.data, type:message.type}));
 	};
 }
