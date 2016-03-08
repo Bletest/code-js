@@ -16,6 +16,7 @@ function init() {
 			$.getScript(CONFIG_PATHS["class"] + "Socket.js", function() {
 				modules.socket = new Socket();
 				modules.socket.init();
+				modules.socket.ws.onmessage = modules.socket.handleMessage;
 				setInterval(function(){modules.socket.handleStateChange()}, 50);
 			});
 			$.getScript(CONFIG_PATHS["class"] + "Message.js", function() {

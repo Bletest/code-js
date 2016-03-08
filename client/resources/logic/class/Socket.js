@@ -36,6 +36,8 @@ var Socket = function() {
 	};
 	
 	this.handleMessage = function(message) {
+		message = JSON.parse(message);
+		console.log(message);
 		switch(message.type) {
 			case "":
 				// asd
