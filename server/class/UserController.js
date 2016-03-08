@@ -12,9 +12,10 @@ module.exports = function() {
 	this.init = function() {
 	};
 	
-	this.createClient = function(client) {
-		/*this.users.push(new modules.classes.User(client));
-		userCount++;*/
+	this.createClient = function(client, User) {
+		userCount++;
+		this.users.push(new User(client, userCount));
+		console.log("New client ID: " + userCount);
 	};
 	
 	this.login = function(user) {
@@ -24,7 +25,7 @@ module.exports = function() {
 			else {
 				console.log(row[0]);
 				if (user.pass == row[0]) {
-					this.getUser(user).init(row[1]); 	// Send userId
+					this.getUserByClientId(user.clientId).init(row[1]);
 				}
 			}
 		});
@@ -36,6 +37,10 @@ module.exports = function() {
 				return users[i];
 		}
 	};
+	
+	this.getUserByClientId(clientId) {
+		
+	}
 	
 	this.initUser = function(user) {
 	};

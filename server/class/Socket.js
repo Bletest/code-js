@@ -13,9 +13,9 @@ module.exports = function() {
 		var WebSocket = require('./../resources/node_modules/ws').Server;
 		this.ws = new WebSocket({port: portNumber});
 		console.log("Websocket created");
-	};	
+	};
 	
-	this.handleMessage = function(message) {
+	this.handleMessage = function(message, controller) {
 		switch (message.type) {
 			case "login":
 				controller.userController.login(message.data.user);

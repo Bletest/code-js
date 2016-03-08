@@ -3,9 +3,9 @@ CLASS: User
 DESCRIPTION: Is a user on CodeJS, extends a NodeJS client
 */
 
-module.exports = function(client) {
+module.exports = function(client, clientId) {
 	// Attributes
-	this.clientId;
+	this.clientId = clientId;
 	this.userId;
 	this.username;
 	this.lastConnection;

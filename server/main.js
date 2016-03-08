@@ -29,16 +29,15 @@ function init() {
 	socket.ws.on("connection", function(client) {
 		// Initialization of user
 		console.log("Connection occured");
-		// Creation of the user
-		// Add it to the user controller
-		controller.userController.createClient(client);
+		// Creation of the user & Add it to the user controller
+		controller.userController.createClient(client, modules.classes.User);
 		
 		// Listenning for any message
-		user.client.on("message", function(data) {
+		client.on("message", function(data) {
 			var message = new modules.classes.Message(data);
 			console.log("TYPE=" + message.type + " " + "DATA=" + message.data);
-			socket.handleMessage(message);			
-		});		
+			socket.handleMessage(message, controller);			
+		});
 		
 		// var message = socket.parse(data);
 		// socket.handle(message);
