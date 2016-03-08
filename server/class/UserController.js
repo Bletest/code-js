@@ -12,10 +12,10 @@ module.exports = function() {
 	this.init = function() {
 	};
 	
-	this.createClient(client) {
+	this.createClient = function(client) {
 		this.users.push(new modules.classes.User(client));
 		userCount++;
-	}
+	};
 	
 	this.login = function(user) {
 		database.queryPrep("SELECT " + tables.user.fields.pass + ", " + tables.user.fields.userId + " FROM " + tables.user.name + " WHERE " + tables.user.fields.username + " = ?", [user.name], function(err, row) {
@@ -28,24 +28,24 @@ module.exports = function() {
 				}
 			}
 		});
-	}
+	};
 	
 	this.getUser = function(client) {
 		for (var i = 0; i < users.length; i++) {
 			if (users[i].client == client)
 				return users[i];
 		}
-	}
+	};
 	
 	this.initUser(user) {
 		user.
-	}
+	};
 	
 	this.removeUser = function(user) {
 		/*user.disconnect();
 		user.client.close();*/
 		users.splice(users.indexOf(user), 1);
-	}
+	};
 	
 	this.test = function() {
 	};
