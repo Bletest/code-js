@@ -38,7 +38,7 @@ module.exports = function() {
 		}
 	};
 	
-	this.getUserByClientId(clientId) {
+	this.getUserByClientId = function(clientId) {
 		
 	}
 	
