@@ -3,8 +3,8 @@ CLASS: Message
 DESCRIPTION: Socket message handler
 */
 
-module.exports = function(data) {
+module.exports = function(message) {
 	// Attributes
-	this.type;
-	this.data = data;
+	this.type = message.type;
+	this.data = message.data;
 };

@@ -17,8 +17,8 @@ module.exports = function() {
 	
 	this.handleMessage = function(message) {
 		switch (message.type) {
-			case "type ZERO": 
-				console.log("Type zero it is");
+			case "user-leave": 
+				controller.userController.removeUser(message.data.user);
 				break;
 		}
 	}

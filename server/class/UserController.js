@@ -19,8 +19,8 @@ module.exports = function() {
 	}
 	
 	this.removeUser = function(user) {
-		user.disconnect();
-		user.client.close();
+		/*user.disconnect();
+		user.client.close();*/
 		users.splice(users.indexOf(user), 1);
 	}
 	

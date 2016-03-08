@@ -15,25 +15,26 @@ module.exports = function() {
 		db = new this.sqlite3.Database(this.fileName);
 	};
 	
-	// Doesn't work yet
-	this.query = function(query, type, callback) {
-		db.serialize(function() {
-			this.connection = true;
-			// Select
-			if (type == 0) {
-				db.each(query, function(err, row) {
-					if (err)
-						callback(err);
-					else
-						callback(row);
-				});
-			}
+	this.queryPrep = function(query, valuesArray, callback) {
+		if (valuesArray.length > 0) {
+			db.run("BEGIN TRANSACTION");
+			db.run(query, valuesArray, function(err, row) {
+				callback(err, row);
+			});
+			db.run("END");
+		}
+		else {
+			db.serialize(function() {
+			db.each(query, function(err, row) {
+				callback(err, row);
+			});
 		});
+		}
 	};
 	
 	this.insert = function (tableName, colToInsert, valuesArray) {
+		var query;
 		db.serialize(function() {
-			this.connection = true;
 			var columns = "(";
 			for (var i = 0; i < colToInsert.length; i++) {
 				columns += colToInsert[i];
@@ -48,41 +49,65 @@ module.exports = function() {
 			}
 			values += ");";
 			
-			var query = "INSERT INTO " + tableName + " " + columns + " VALUES " + values;
+			query = "INSERT INTO " + tableName + " " + columns + " VALUES " + values;
 			
-			var prepare = db.prepare(query);
-			console.log(query);
-			for (var i = 0; i < valuesArray.length; i++) {
-				prepare.run(valuesArray[i]);
-			}
-			prepare.finalize();
-		});
-	}
-	/*
-	this.insert = function (tableName, values) {
-		db.serialize(function() {
-			// Insert
-			var columns = " (";
-			for (var i = 1; i < tableName.fields.length; i++) {		// 1 -> don't take primary key
-				columns += tableName.fields[i];
-				if (i + 1 < tableName.fields.length) 
-					columns += ", ";
-			}
-			columns += ")";
-			console.log(columns);
-			
-			var values = " values(?";
-			for (var i = 1; i < tableName.fields.length - 1; i++) {		// 1 -> 1 "?" already is in variable
-				values += ", ?";
-			}
-			values += ");";
-			
-			var prepare = db.prepare("insert into " + tableName.name + columns + values);
-			for (var i = 0; i < values.length; i++) {
-				prepare.run(values[i]);
-			}
-			prepare.finalize();
+			db.run("BEGIN TRANSACTION");
+			db.run(query, valuesArray, function(err) {
+				if (err)
+					console.log(err);
+				else
+					console.log(valuesArray.length + " item(s) added into " + tableName);
+			});
+			db.run("END");
 		});
 	};
-	*/
+	
+	this.update = function (tableName, colToUpdate, valuesArray, whereClause, whereValue) {
+		var query;
+		db.serialize(function() {
+			if (colToUpdate.length == valuesArray.length) {
+				var set = "";
+				for (var i = 0; i < colToUpdate.length; i++) {
+					set += colToUpdate[i] + "=?";
+					if (i + 1 < colToUpdate.length) 
+						set += ", ";
+				}
+				
+				if (typeof whereClause === 'string' && typeof whereValue === 'string') {
+					var where = whereClause + "=" + "'" + whereValue + "';";
+					
+					query = "UPDATE " + tableName + " SET " + set + " WHERE " + where;
+					
+					db.run("BEGIN TRANSACTION");
+					db.run(query, valuesArray, function(err) {
+						if (err)
+							console.log(err);
+						else
+							console.log(valuesArray.length + " item(s) updated into " + tableName);
+					});
+					db.run("END");
+				}
+			}
+		});
+	};
 };
+
+/************************* EXAMPLES **************************/
+// Select prepared example
+/*database.queryPrep("select * from " + modules.config.database.tables.user.name, [], function(err, row) {
+	if (err)
+		console.log(err);
+	else
+		console.log(row);
+});*/
+// Update example
+/*var colToUpdate = [modules.config.database.tables.user.fields.username];
+database.update(modules.config.database.tables.user.name, colToUpdate, ['pix0ff'], modules.config.database.tables.user.fields.username, 'Pixoff');
+*/	
+// Account creation example
+/*var values = ['Pixoff', 'password', 'www.rien.com/123.png', '0'];
+var colToInsert = 	[modules.config.database.tables.user.fields.username, 
+					modules.config.database.tables.user.fields.pass, 
+					modules.config.database.tables.user.fields.avatarURL, 
+					modules.config.database.tables.user.fields.inscriptionDate];					
+database.insert(modules.config.database.tables.user.name, colToInsert, values);*/
