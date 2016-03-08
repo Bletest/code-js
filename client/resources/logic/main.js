@@ -18,6 +18,9 @@ function init() {
 				modules.socket.init();
 				setInterval(function(){modules.socket.handleStateChange()}, 50);
 			});
+			$.getScript(CONFIG_PATHS["class"] + "Message.js", function() {
+				
+			});
 		});
 	});
 }

@@ -38,12 +38,12 @@ var Socket = function() {
 	this.handleMessage = function(message) {
 		switch(message.type) {
 			case "":
-				// .......
+				// asd
 				break;
 		}
 	};
 	
-	this.sendMessage(message) {
+	this.sendMessage = function(message) {
 		this.ws.send(JSON.stringify({data:message.data, type:message.type}));
 	};
 }
