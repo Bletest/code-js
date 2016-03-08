@@ -46,7 +46,7 @@ function changePage(fileName, callBack) {
 	$("head").append('<link rel="stylesheet" href="'+CONFIG_PATHS["styles"] + fileName +'.css" type="text/css" />');
 
 	if (fileName == "editor") {
-		$("head").append('<script src="resources/logic/tools/codemirror-5.12/mode/javascript/javascript.js"></script>');
+		$("head").append('<script src="'+CONFIG_PATHS["tools"]+'codemirror-5.12/lib/codemirror.js"></script>');
 		$("head").append('<script src="'+CONFIG_PATHS["core"]+'editor.js"></script>');
 		$("head").append('<script src="'+CONFIG_PATHS["tools"]+'codemirror-5.12/mode/javascript/javascript.js"></script>');
 		$("head").append('<link rel="stylesheet" href="'+CONFIG_PATHS["tools"]+'codemirror-5.12/lib/codemirror.css" type="text/css" />');
