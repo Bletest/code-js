@@ -13,8 +13,8 @@ module.exports = function() {
 	};
 	
 	this.createClient = function(client) {
-		this.users.push(new modules.classes.User(client));
-		userCount++;
+		/*this.users.push(new modules.classes.User(client));
+		userCount++;*/
 	};
 	
 	this.login = function(user) {
@@ -37,8 +37,7 @@ module.exports = function() {
 		}
 	};
 	
-	this.initUser(user) {
-		user.
+	this.initUser = function(user) {
 	};
 	
 	this.removeUser = function(user) {
