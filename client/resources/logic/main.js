@@ -42,6 +42,7 @@ function changePage(fileName, callBack) {
 	// Clear page
 	$("#top-bar").html("");
 	$("#content").html("");
+
 	// Add the style
 	$("head").append('<link rel="stylesheet" href="'+CONFIG_PATHS["styles"] + fileName +'.css" type="text/css" />');
 
