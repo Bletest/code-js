@@ -46,7 +46,8 @@ module.exports = {
 				username: "Username",
 				pass: "Password",
 				avatarURL: "AvatarURL",
-				inscriptionDate: "InscriptionDate"
+				inscriptionDate: "InscriptionDate",
+				lastConnection: "LastConnection"
 			}
 		}
 	}

@@ -13,9 +13,6 @@ function init() {
 	// Include all files
 	includeLogic();
 	
-	// Create controller
-	controller = new modules.classes.Controller(new modules.classes.UserController(), new modules.classes.FileController(), new modules.classes.ProjectController());
-	
 	// Create socket
 	socket = new modules.classes.Socket();
 	socket.init(modules.config.global.websocket.port);
@@ -24,6 +21,9 @@ function init() {
 	tables = modules.config.database.tables;
 	database = new modules.classes.Database();
 	database.init(database);	
+	
+	// Create controller
+	controller = new modules.classes.Controller(new modules.classes.UserController(database, tables), new modules.classes.FileController(), new modules.classes.ProjectController());
 			
 	// Websocket
 	socket.ws.on("connection", function(client) {
@@ -34,7 +34,7 @@ function init() {
 		
 		// Listenning for any message
 		client.on("message", function(data) {
-			var message = new modules.classes.Message(data);
+			var message = new modules.classes.Message(JSON.parse(data));
 			console.log("TYPE=" + message.type + " " + "DATA=" + message.data);
 			socket.handleMessage(message, controller);			
 		});

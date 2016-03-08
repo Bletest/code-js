@@ -25,10 +25,10 @@ module.exports = function() {
 		}
 		else {
 			db.serialize(function() {
-			db.each(query, function(err, row) {
-				callback(err, row);
+				db.each(query, function(err, row) {
+					callback(err, row);
+				});
 			});
-		});
 		}
 	};
 	

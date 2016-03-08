@@ -34,7 +34,8 @@ module.exports = function() {
 	
 	this.broadcast = function() {
 	};
-	this.parse = function(data) {
+	this.parse = function(message) {
+		
 	};
 	this.createClient = function() {
 	};

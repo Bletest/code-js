@@ -15,7 +15,10 @@ module.exports = function(client, clientId) {
 	this.client = client;
 	
 	// Methods
-	this.init = function(userId) {
+	this.init = function(userController, userId) {
+		this.userId = userId;
+		this.username = userController.getUsernameById(this.userId);
+		this.lasConnection = userController.getLastConnectionById(this.userId);
 	}
 	
 	this.disconnect = function() {
