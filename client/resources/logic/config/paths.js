@@ -5,6 +5,7 @@ CONFIG_PATHS["resources"]		= CONFIG_PATHS["root"] 		+ "resources/";
 CONFIG_PATHS["pages"] 			= CONFIG_PATHS["root"] 		+ "pages/";
 CONFIG_PATHS["ui"] 				= CONFIG_PATHS["resources"] + "ui/";
 CONFIG_PATHS["logic"] 			= CONFIG_PATHS["resources"] + "logic/";
+CONFIG_PATHS["class"] 			= CONFIG_PATHS["logic"] 	+ "class/";
 CONFIG_PATHS["core"] 			= CONFIG_PATHS["logic"] 	+ "core/";
 CONFIG_PATHS["config"]			= CONFIG_PATHS["logic"] 	+ "config/";
 CONFIG_PATHS["tools"] 			= CONFIG_PATHS["logic"]		+ "tools/";
