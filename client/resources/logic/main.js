@@ -49,6 +49,7 @@ function changePage(fileName, callBack) {
 		$("head").append('<script src="resources/logic/tools/codemirror-5.12/mode/javascript/javascript.js"></script>');
 		$("head").append('<script src="'+CONFIG_PATHS["core"]+'editor.js"></script>');
 		$("head").append('<script src="'+CONFIG_PATHS["tools"]+'codemirror-5.12/mode/javascript/javascript.js"></script>');
+		$("head").append('<link rel="stylesheet" href="'+CONFIG_PATHS["tools"]+'codemirror-5.12/lib/codemirror.css" type="text/css" />');
 		$("head").append('<link rel="stylesheet" href="'+CONFIG_PATHS["tools"]+'codemirror-5.12/theme/3024-day.css" type="text/css" />');
 	}
 	
