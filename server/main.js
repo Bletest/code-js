@@ -6,6 +6,7 @@ var modules = {core:{}, classes:{}, config:{}};
 var controller;
 var socket;
 var database;
+var tables;
 
 // INITIALISATION
 function init() {
@@ -20,6 +21,7 @@ function init() {
 	socket.init(modules.config.global.websocket.port);
 	
 	// Connection to database
+	tables = modules.config.database.tables;
 	database = new modules.classes.Database();
 	database.init(database);	
 			
@@ -28,16 +30,13 @@ function init() {
 		// Initialization of user
 		console.log("Connection occured");
 		// Creation of the user
-		var user = new modules.classes.User();
-		// Init it with the websocket client
-		user.init(client);
 		// Add it to the user controller
-		controller.userController.users.push(user);
-		console.log("Users: " + controller.userController.users.length);
+		controller.userController.createClient(client);
 		
 		// Listenning for any message
 		user.client.on("message", function(data) {
 			var message = new modules.classes.Message(data);
+			console.log("TYPE=" + message.type + " " + "DATA=" + message.data);
 			socket.handleMessage(message);			
 		});		
 		
