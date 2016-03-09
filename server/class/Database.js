@@ -5,14 +5,14 @@ DESCRIPTION: Handles database interactions
 
 module.exports = function() {	
 	// Attributes
-	this.fileName = __dirname + "\\..\\data\\database\\CodeDB.db";
+	// this.fileName = databasePath;
 	this.sqlite3;
 	var db;
 	
 	// Methods
-	this.init = function(sqlite) {
+	this.init = function(databasePath) {
 		this.sqlite3 = require(__dirname + '\\..\\resources\\node_modules\\sqlite3').verbose();
-		db = new this.sqlite3.Database(this.fileName);
+        db = new this.sqlite3.Database(databasePath);
 	};
 	
 	this.queryPrep = function(query, valuesArray, callback) {

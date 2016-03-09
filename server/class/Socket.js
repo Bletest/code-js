@@ -12,7 +12,7 @@ module.exports = function() {
 	this.init = function(portNumber) {
 		var WebSocket = require('./../resources/node_modules/ws').Server;
 		this.ws = new WebSocket({port: portNumber});
-		console.log("Websocket created");
+		log("Websocket created", "debug", "Socket.js");
 	};
 	
 	this.handleMessage = function(message, controller) {

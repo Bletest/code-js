@@ -1,4 +1,5 @@
 var modules = {};
+var currentPage;
 
 function init() {
 	// Include the paths config
@@ -29,6 +30,12 @@ function init() {
 // Load #top-bar and #content from filename
 // Probably a good idea to move on a tool.js
 function changePage(fileName, callBack) {
+    if(currentPage == fileName) {
+        if(callBack)
+            callBack();
+        return;
+    }
+        
 	var elementToLoad = 3;
 	var elementLoaded = 0;
 	
@@ -60,6 +67,8 @@ function changePage(fileName, callBack) {
 	
 	$("#top-bar").load(CONFIG_PATHS["pages"] + fileName + CONFIG_GLOBAL["htmlExtension"] + " #page-header", onLoadFinished);
 	$("#content").load(CONFIG_PATHS["pages"] + fileName + CONFIG_GLOBAL["htmlExtension"] + " #page-content", onLoadFinished);
+
+    currentPage = fileName;
 }
 
 init();

@@ -1,5 +1,5 @@
 module.exports = {
-	path: "./data/database/CodeDB.db",
+	path: __dirname + "\\..\\..\\data\\database\\CodeDB.db",
 	tables: {
 		project: {
 			name: "project",

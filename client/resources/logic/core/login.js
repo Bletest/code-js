@@ -4,7 +4,6 @@ var Login = function(){
 		$("#login-button").on("click", this.login);
 		$("#login-sign-up").on("click", this.toggleSignUp);
 		$("#repeat-password-area").toggle();
-		console.log("Login intialized");
 	}
 	
 	this.login = function() {
