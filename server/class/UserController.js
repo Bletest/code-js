@@ -3,12 +3,12 @@ CLASS: User Controller
 DESCRIPTION: Is the unique handler for users and websocket clients
 */
 
-module.exports = function(database, tables) {
+module.exports = function(/*database, tables*/) {
 	// Attributes
 	this.users = [];
 	var userCount = 0;
-	this.database = database;
-	this.tables = tables;
+	/*this.database = database;
+	this.tables = tables;*/
 	
 	// Methods
 	this.init = function() {
@@ -17,12 +17,37 @@ module.exports = function(database, tables) {
 	this.createClient = function(client, User) {
 		userCount++;
 		this.users.push(new User(client, userCount));
-		console.log("New client ID: " + userCount);
+		log("New connection (CID: " + userCount + ")", "info", "UserController.js");
 	};
 	
-	this.login = function(user) {
-		console.log(user.name);
-		this.database.queryPrep("SELECT " + this.tables.user.fields.pass + ", " + this.tables.user.fields.userId + " FROM " + this.tables.user.name + " WHERE " + this.tables.user.fields.username + " = ?", [user.name], function(err, row) {
+	this.login = function(user, client) {
+		log("Login attempt with username: " + user.username, "info", "UserController.js");
+
+        database.getSingle(
+            " SELECT " + tables.user.fields.pass + ", " + tables.user.fields.userId + 
+            " FROM " + tables.user.name + 
+            " WHERE " + tables.user.fields.username + " = ?", [user.username], 
+            function(err, row){
+                var loggedSuccessful = false;
+                var msg = new modules.classes.Message();
+                
+                if(row) {
+                    if(row[tables.user.fields.pass] == user.pass) {
+                        loggedSuccessful = true;
+                        msg.fromVal("login-attempt", true);
+                        log("Login attempt successful", "info", "UserController.js");
+                    }
+                }
+                
+                if(!loggedSuccessful) {
+                    msg.fromVal("login-attempt", false);
+                    log("Login attempt failed", "warn", "UserController.js");
+                }
+
+                socket.sendMessage(client, msg);
+            }
+        );
+		/*this.database.queryPrep("SELECT " + this.tables.user.fields.pass + ", " + this.tables.user.fields.userId + " FROM " + this.tables.user.name + " WHERE " + this.tables.user.fields.username + " = ?", [user.name], function(err, row) {
 			if (err) 
 				console.log(err);
 			else {
@@ -33,7 +58,7 @@ module.exports = function(database, tables) {
 					this.getUserByClientId(user.clientId).init(this, row[1]);
 				}
 			}
-		});
+		});*/
 	};
 	
 	this.getUser = function(client) {

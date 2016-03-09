@@ -36,13 +36,16 @@ function changePage(fileName, callBack) {
         return;
     }
         
+    $("#page-content").fadeOut();
+    
 	var elementToLoad = 3;
 	var elementLoaded = 0;
 	
 	var onLoadFinished = function() {
 		if(++elementLoaded == 3) {
 			console.log("Loaded " + fileName);
-
+            $("#page-content").hide();
+            $("#page-content").fadeIn();
 			if(callBack)
 				callBack();
 		}

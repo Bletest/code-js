@@ -2,6 +2,6 @@ module.exports = {
 	websocket: {
 		port: 49111
 	},
-    debug: false,
+    debug: true,
     version: 0.1
 }

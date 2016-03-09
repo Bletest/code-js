@@ -38,15 +38,15 @@ var Socket = function() {
 		}
 		
 		this.lastReadyState = this.ws.readyState;
-	};
+        };
 	
 	this.handleMessage = function(message) {
-		console.log(message);
-		var message = new Message();
+		var msg = new Message();
+        msg.fromJSON(message.data);
 
-		switch(message.type) {
-			case "":
-				// asd
+		switch(msg.type) {
+			case "login-attempt":
+                modules.login.handleLogin(msg.data);
 				break;
 		}
 	};

@@ -15,10 +15,12 @@ module.exports = function() {
 		log("Websocket created", "debug", "Socket.js");
 	};
 	
-	this.handleMessage = function(message, controller) {
+	this.handleMessage = function(message, client) {
+        log("["+message.type+"] " + JSON.stringify(message.data), "debug", "Socket.js");
+        
 		switch (message.type) {
 			case "login":
-				controller.userController.login(message.data);
+				controller.userController.login(message.data, client);
 				break;
 			case "user-leave": 
 				controller.userController.removeUser(message.data.user);

@@ -104,6 +104,12 @@ input[type="button"]:active, button:active {
 	background-color: #3d84cc;
 }
 
+input[type="button"]:disabled {
+    background-color:#959595;
+    cursor:default;
+}
+
+
 /*	--------------------------- TOOLS CLASSES ----------------------------*/
 
 .inline {

@@ -51,16 +51,15 @@ function init() {
 	// Websocket
 	socket.ws.on("connection", function(client) {
 		// Initialization of user
-		log("New connection", "info");
 		// Creation of the user & Add it to the user controller
 		controller.userController.createClient(client, modules.classes.User);
 		
 		// Listening for any message
 		client.on("message", function(data) {
 			var message = new modules.classes.Message(JSON.parse(data));
-			console.log("TYPE=" + message.type + " " + "DATA=" + message.data);
-			socket.handleMessage(message, controller);
-			socket.sendMessage(client, message);
+
+            // TODO: CHECK TO PASS USER ?
+			socket.handleMessage(message, client);
 		});
 		
 		// var message = socket.parse(data);
@@ -121,7 +120,7 @@ global.log = function(message, type, fileName) {
     // If type is debug, check if debug is enabled
     if(type == "debug" && !modules.config.global.debug)
         return;
-        
+
     if(modules.config.global.debug) {
         // Get the default fileName if not specified
         if(!fileName)
@@ -129,7 +128,7 @@ global.log = function(message, type, fileName) {
         
         // Make the filename 10 char long
         if(fileName.length > 10)
-            fileName.splice(0, 10);
+            fileName = fileName.substr(0, 9) + " ";
         else
             fileName += ((" ").repeat(10 - fileName.length));
         

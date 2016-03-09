@@ -10,7 +10,7 @@ var Message = function(message) {
 		this.type = msg.type;
 	}
 	
-	this.fromValues = function(type, data) {
+	this.fromVal = function(type, data) {
 		this.type = type;
 		this.data = data;
 	}

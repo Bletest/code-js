@@ -10,9 +10,9 @@ module.exports = function() {
 	var db;
     
     this.init = function() {
-        log("Loading database " + modules.config.database.path.slice(modules.config.database.path.lastIndexOf("\\") + 1), "info");
 		this.sqlite3 = require(modules.config.paths.nodeModules + 'sqlite3').verbose();
         db = new this.sqlite3.Database(modules.config.database.path);
+        log("Loaded database " + modules.config.database.path.slice(modules.config.database.path.lastIndexOf("\\") + 1), "info");
     }
     
     // EXECUTE ONE QUERY

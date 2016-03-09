@@ -5,9 +5,9 @@
 }
 
 #connection-text {
-	font-size: 24px;
+    color:green;
+	font-size: 32px;
 	margin-bottom: 50px;
-	color:#666;
 }
 
 #connection-status img {
@@ -33,7 +33,7 @@
     100% { opacity: 1.0; }
 }
 
-.rotating {
+.blinking {
     -webkit-animation-name: blinker;
     -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: linear;
