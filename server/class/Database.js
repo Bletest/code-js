@@ -8,11 +8,51 @@ module.exports = function() {
 	// this.fileName = databasePath;
 	this.sqlite3;
 	var db;
-	
+    
+    this.init = function() {
+        log("Loading database " + modules.config.database.path.slice(modules.config.database.path.lastIndexOf("\\") + 1), "info");
+		this.sqlite3 = require(modules.config.paths.nodeModules + 'sqlite3').verbose();
+        db = new this.sqlite3.Database(modules.config.database.path);
+    }
+    
+    // EXECUTE ONE QUERY
+    this.execPrep = function(sql, values, callback) {
+        db.serialize(function() {
+            db.run(sql, values, callback);
+        });
+    }
+    
+    // RETURN ONE VALUE FROM THE PREPARED QUERY
+    this.getSingle = function(sql, values, callback) {
+        db.serialize(function() {
+            db.get(sql, values, callback);
+        });
+    }
+    
+    // RETURN ALL VALUES FROM THE PREPARED QUERY
+    this.getArray = function(sql, values, callback) {
+        db.serialize(function() {
+            db.all(sql, values, callback);
+        });
+    }
+    
+    // DO NOT USE; NOT SECURE
+    this.exec = function(sql, callback) {
+        db.serialize(function() {
+            db.run(sql, callback);
+        });
+    }
+    
+    /********* SAMPLES **********/
+    
+    // http://goo.gl/8U5sos
+    
+    // OLD
+	/*
 	// Methods
-	this.init = function(databasePath) {
-		this.sqlite3 = require(__dirname + '\\..\\resources\\node_modules\\sqlite3').verbose();
-        db = new this.sqlite3.Database(databasePath);
+	this.init = function() {
+		this.sqlite3 = require(modules.config.paths.nodeModules + 'sqlite3').verbose();
+        db = new this.sqlite3.Database(modules.config.database.path);
 	};
 	
 	this.queryPrep = function(query, valuesArray, callback) {
@@ -91,7 +131,7 @@ module.exports = function() {
 				}
 			}
 		});
-	};
+	};*/
 };
 
 /************************* EXAMPLES **************************/

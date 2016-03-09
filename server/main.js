@@ -2,14 +2,19 @@
 // Initialize server, creates objects and connects to database
 
 // Global variables
-var modules = {core:{}, classes:{}, config:{}};
-var controller;
-var socket;
-var database;
-var tables;
+global.modules = {core:{}, classes:{}, config:{}};
+global.controller;
+global.socket;
+global.database;
+global.tables;
 
 // INITIALISATION
 function init() {
+    console.log("----------------------------------------------");
+    console.log("CodeJS (Server) by 4HIN (2015-2016) / CIFOM-ET");
+    console.log("----------------------------------------------");
+    console.log("");
+    
 	// Include all files
 	includeLogic();
     
@@ -24,7 +29,7 @@ function init() {
 
 	// Connection to database
 	database = new modules.classes.Database(modules.config.database.path);
-	database.init(modules.config.database.path);	
+	database.init();	
     tables = modules.config.database.tables;
 
     log("Done.", "debug");
@@ -63,6 +68,7 @@ function init() {
 	});
 
     log("Server ready!", "info");
+ 
 	// Cannot work => move on handleMessage
 	/*socket.ws.on("leave", function(client) {
 		var user = controller.userController.getUser(client);
@@ -76,8 +82,9 @@ function includeLogic() {
 	modules.config.paths = require("./resources/config/paths.js");
 	modules.config.database = require(modules.config.paths.config + "database.js");
 	modules.config.global = require(modules.config.paths.config + "global.js");
+	modules.config.print = require(modules.config.paths.config + "print.js");
     
-    log("Starting server...", "info");
+    log("Starting CodeJS (v" + modules.config.global.version + ")", "info");
     log("Loading core files", "debug");
 
 	// Link core files
@@ -105,31 +112,51 @@ function includeLogic() {
 }
 
 global.log = function(message, type, fileName) {
-    if(!fileName)
-        fileName = module.filename.slice(__filename.lastIndexOf("\\") + 1, module.filename.length);
+    var colors = modules.config.print.colors;
     
+    // Default type is error
     if(!type)
         type = 0;
         
+    // If type is debug, check if debug is enabled
     if(type == "debug" && !modules.config.global.debug)
         return;
         
+    if(modules.config.global.debug) {
+        // Get the default fileName if not specified
+        if(!fileName)
+            fileName = module.filename.slice(__filename.lastIndexOf("\\") + 1, module.filename.length);
+        
+        // Make the filename 10 char long
+        if(fileName.length > 10)
+            fileName.splice(0, 10);
+        else
+            fileName += ((" ").repeat(10 - fileName.length));
+        
+        fileName = "" + fileName + colors.reset + "";
+    }
+    else
+        fileName = "";
+    
+    var message = fileName + colors.bold + message + colors.reset;
+    
+    // Display the right message
     switch(type) {
         case "err":
         case 0:
-            console.log(modules.config.global.messages.error + "["+fileName+"] " + message);
+            console.log(modules.config.print.messages.error + message);
             break;
         case "info":
         case 1:
-            console.log(modules.config.global.messages.info + "["+fileName+"] " + message);
+            console.log(modules.config.print.messages.info + message);
             break;
         case "warn":
         case 2:
-            console.log(modules.config.global.messages.warning + "["+fileName+"] " + message);
+            console.log(modules.config.print.messages.warning + message);
             break;
         case "debug":
         case 3:
-            console.log(modules.config.global.messages.debug + "["+fileName+"] " + message);
+            console.log(modules.config.print.messages.debug + message);
             break;
     }
 

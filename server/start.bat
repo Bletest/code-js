@@ -1,5 +1,6 @@
+@echo off
 :loop
+cls
 node main.js
 pause
-cls
 goto loop
